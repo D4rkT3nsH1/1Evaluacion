@@ -44,6 +44,7 @@ function EleccionPelicula() {
         numerosGenerados.push(numRandom);
 
         divPelis[index].setAttribute("id", numRandom);
+        divPelis[index].setAttribute("data-id", index);
         salasPeli[index].setAttribute("id", numRandom);
         salasPeli[index].firstChild.setAttribute("src", "IMG/" + numRandom + ".jpg");
     }
@@ -51,11 +52,14 @@ function EleccionPelicula() {
 }
 
 var anteriorDiv = -1;
+var idDelDivClicado;
+var numSala;
 
 document.addEventListener("DOMContentLoaded", function () {
     Array.from(divPelis).forEach(function (salaPeli) {
         salaPeli.addEventListener("click", function () {
-            var idDelDivClicado = salaPeli.id;
+            idDelDivClicado = salaPeli.id;
+            numSala = salaPeli.getAttribute("data-id");
             console.log("ID clicado: " + idDelDivClicado);
 
             var pelicula = null;
@@ -119,4 +123,15 @@ function TipoEntrada() {
 
 function CheckEntradas() {
 
+    var numeroEntradas = document.getElementById("numeroEntradas").value;
+    
+    console.log(numeroEntradas);
+    console.log(numSala);
+
+    if (ButacasLibres[numSala] < numeroEntradas) {
+        window.alert("No hay tantas entradas disponibles")
+    } else {
+        document.getElementById("butacas").innerHTML = "Butacas totales" + TotalButacas[numSala] + ", butacas libres: " + (ButacasLibres[numSala] - numeroEntradas);
+        ButacasLibres[numSala] = ButacasLibres[numSala] - numeroEntradas;
+    }
 }

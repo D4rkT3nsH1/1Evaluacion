@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="10ariketa.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="centered">
+      <h1>JUEGA A ADIVINAR UN NUMERO ENTRE 1 Y 50</h1>
+    </header>
+
+    <div class="centered">
+      <button type="button" onclick="ActivarJuego()">EMPEZAR JUEGO</button>
+    </div>
+
+    <div id="juego">
+
+        <div class="seccionJuego">
+            <label for="num">Elige un número: </label>
+            <input type="number" name="num" id="numUsuario" min="1" max="50" size="4">
+            <button type="button" onclick="AdivinarNumero()">ADIVINAR</button>
+        </div>
+
+      <div class="seccionJuego">
+        <div class="eleccion"></div>
+        <div class="eleccion"></div>
+        <div class="eleccion"></div>
+        <div class="eleccion"></div>
+        <div class="eleccion"></div>
+      </div>
+
+      <div><h1 id="MENSAJE_AYUDA"></h1></div>
+
+      <div id="ERROR_USUARIO">
+        <h1>NO ES UN NÚMERO VÁLIDO</h1>
+        <img src="images/error.png" alt="error">
+      </div>
+
+      <div id="ACERTADO">
+        <h1>HAS ACERTADO EL NÚMERO</h1>
+        <img src="images/ok.png" alt="bien">
+      </div>
+
+      <div id="FALLADO">
+        <h1>HAS USADO EL MÁXIMO DE INTENTOS</h1>
+        <img src="images/error.png" alt="error">
+      </div>
+
+    </div>
+
+  </body>
+  <script type="text/javascript" src="10ariketa.js"></script>
+</html>

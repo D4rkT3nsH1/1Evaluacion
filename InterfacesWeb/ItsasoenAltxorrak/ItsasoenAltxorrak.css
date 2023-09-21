@@ -1,0 +1,39 @@
+body {
+    background-image: url("img/fondomarino.jpg");
+    background-size: cover;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background-color: rgb(92, 168, 147);
+    border: 3px solid rgb(44, 65, 105);
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+#divImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divItems {
+    border: 3px solid rgb(44, 65, 105);
+    padding: 5px 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.divItems:first-child:last-child{
+    margin-left: 0px;
+}
+
+
+.images {   
+    height: 100px;
+    width: 100px;
+}

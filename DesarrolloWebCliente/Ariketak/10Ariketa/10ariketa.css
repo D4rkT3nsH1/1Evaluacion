@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    margin: 50px;
+}
+
+#juego {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.seccionJuego {
+    margin-bottom: 50px;
+}
+
+.eleccion {
+    border: 2px solid black;
+    background-color: rgb(64, 64, 64);
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+
+#MENSAJE_AYUDA {
+    display: none;
+    align-items: center;
+}
+
+#ERROR_USUARIO {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ACERTADO {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#FALLADO {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}

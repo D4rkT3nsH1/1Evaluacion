@@ -1,0 +1,101 @@
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(21, 91, 66, 0.6475840336134453) 15%);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(38, 85, 104);
+    margin: 2rem 0rem 2rem;
+}
+
+.menu>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu>ul>li {
+    height: 2.5em;
+    width: 12em;
+    line-height: 2.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.menu>ul>li>a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu>ul>li:hover {
+    background-color: rgb(106, 101, 101);
+}
+
+#elementos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#elementos>figure>img {
+    width: 175px;
+    height: 280px;
+}
+
+.texto {
+    display: none;
+}
+
+figure:hover .texto {
+    display: block;
+    position: fixed;
+    padding: 10px;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 25%;
+    border: 2px solid black;
+    color: darkslategray;
+    background-color: gray;
+    z-index: 50;
+}
+
+.series_accion {
+    border: 2px solid yellow;
+    cursor: crosshair;
+}
+
+.series_historica {
+    border: 2px solid yellow;
+    opacity: 0.5;
+}
+
+.series_infantil {
+    border: 2px solid yellow;
+    border-radius: 5%;    
+}
+
+.pelis_accion {
+    border: 2px solid blue;
+    cursor: crosshair;
+}
+
+.pelis_historica {
+    border: 2px solid blue;
+    opacity: 0.5;
+}
+
+.pelis_infantil {
+    border: 2px solid blue;
+    border-radius: 5%;
+}

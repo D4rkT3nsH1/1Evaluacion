@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="formulario.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h2>FORMULARIO</h2>
+    <p></p>
+
+    <div class="container">
+      <form
+        id="finscripcion"
+        name="encuesta"
+        action="bigarrenLehioa.html"
+        method="get"
+      >
+        <fieldset>
+          <legend>Identificaci&oacute;n</legend>
+          <div class="row">
+            <div class="col-25">
+              <label for="correo">Cuenta de correo</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="text"
+                placeholder="cuenta@dominio.com"
+                id="correo"
+                name="ncorreo"
+              />
+            </div>
+            <div id="mensajeErrorCorreo" style="color: red"></div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="Klabe1">Introducir Clave Acceso</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="password"
+                id="klabe1"
+                name="nklabe1"
+                placeholder="password"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="Klabe2">Repita Clave Acceso</label>
+            </div>
+            <div class="col-75">
+              <input
+                type="password"
+                id="klabe2"
+                name="nklabe2"
+                placeholder="password"
+              />
+            </div>
+            <div id="mensajeError" style="color: red"></div>
+          </div>
+        </fieldset>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Nombre</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              size="30"
+              maxlength="40"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Apellido</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              size="30"
+              maxlength="30"
+              disabled="true"
+              id="apellido"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fnacimiento">Fecha nacimiento</label>
+          </div>
+          <div class="col-75">
+            <input type="date" id="fnacimiento" name="fnacimi" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="cursos">Cursos</label>
+          </div>
+          <div class="col-75">
+            <label for="web" class="cCursos"
+              >Programador Aplicaciones Web</label
+            >
+            <input type="radio" name="Curso" checked id="web" value="web" />
+            <br />
+            <label for="objetos" class="cCursos">Programador de Objetos</label>
+            <input type="radio" name="Curso" id="objetos" value="objetos" />
+            <br />
+            <label for="sistemas" class="cCursos"
+              >Programador de Sistemas</label
+            >
+            <input type="radio" name="Curso" id="sistemas" value="sistemas" />
+          </div>
+        </div>
+
+        <!--  <div class="row">
+    <div class="col-25">
+      <label for="materias">Materias</label>
+    </div>
+    <div class="col-75">
+      <select id="Materias" name="Materias" size="4" > 
+<option value="1">Html</option>
+<option value="2">CSS</option>
+<option value="3">JavaScript</option>
+<option value="4">PHP</option>
+</select>
+    </div>
+  </div>-->
+        <input type="button" value="ventana" name="fcrearVentana" />
+        <input type="button" value="cerrarventana" name="fcerrarVentana" />
+        <input type="button" value="abrirpopup" name="fabrirPopup" onclick="AbrirPopUp()"/>
+        <div class="row">
+          <input type="submit" value="Submit" onclick="return validarFormulario()"/>
+        </div>
+      </form>
+    </div>
+    <script src="formulario.js" type="text/javascript"></script>
+  </body>
+</html>

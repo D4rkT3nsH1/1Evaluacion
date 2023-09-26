@@ -1,4 +1,5 @@
 {
     "editor.fontSize": 12,
-    "editor.lineHeight": 1.25
+    "editor.lineHeight": 1.25,
+    "liveServer.settings.port": 5501
 }

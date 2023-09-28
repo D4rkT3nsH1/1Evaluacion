@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Erabiltzaileen Kudeaketa</title>
+</head>
+<body>
+    <h1>Erabiltzaileen Kudeaketa</h1>
+    
+    <!-- Erabiltzailearen Alta -->
+    <h2>Erabiltzailearen Alta</h2>
+    <form method="post" action="form.php">
+        <input type="text" name="username" placeholder="Erabiltzailea" required>
+        <input type="password" name="password" placeholder="Pasahitza" required>
+        <input type="submit" name="signup" value="Alta eman">
+    </form>
+    
+    <!-- Erabiltzailearen Baja -->
+    <h2>Erabiltzailearen Baja</h2>
+    <form method="post" action="form.php">
+        <input type="text" name="username" placeholder="Erabiltzailea" required>
+        <input type="password" name="password" placeholder="Pasahitza" required>
+        <input type="submit" name="delete" value="Baja eman">
+    </form>
+    
+    <!-- Pasahitzaren Aldaketa -->
+    <h2>Pasahitzaren Aldaketa</h2>
+    <form method="post" action="form.php">
+        <input type="text" name="username" placeholder="Erabiltzailea" required>
+        <input type="password" name="oldpassword" placeholder="Aurreko Pasahitza" required>
+        <input type="password" name="newpassword" placeholder="Berria Pasahitza" required>
+        <input type="submit" name="changepassword" value="Pasahitza aldatu">
+    </form>
+    
+    <!-- Erabiltzaileen Zerrenda -->
+    <h2>Erabiltzaileen Zerrenda</h2>
+    <form method="post" action="form.php">
+        <input type="text" name="username" placeholder="Erabiltzailea" required>
+        <input type="password" name="password" placeholder="Pasahitza" required>
+        <input type="submit" name="userlist" value="Erabiltzaileen Zerrenda">
+    </form>
+</body>
+</html>

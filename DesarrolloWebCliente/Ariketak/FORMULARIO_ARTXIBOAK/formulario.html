@@ -131,11 +131,30 @@
 </select>
     </div>
   </div>-->
-        <input type="button" value="ventana" name="fcrearVentana" />
-        <input type="button" value="cerrarventana" name="fcerrarVentana" />
-        <input type="button" value="abrirpopup" name="fabrirPopup" onclick="AbrirPopUp()"/>
+        <input
+          type="button"
+          value="ventana"
+          name="fcrearVentana"
+          onclick="NuevaVentana()"
+        />
+        <input
+          type="button"
+          value="cerrarventana"
+          name="fcerrarVentana"
+          onclick="CerrarPopUp()"
+        />
+        <input
+          type="button"
+          value="abrirpopup"
+          name="fabrirPopup"
+          onclick="AbrirPopUp()"
+        />
         <div class="row">
-          <input type="submit" value="Submit" onclick="return validarFormulario()"/>
+          <input
+            type="submit"
+            value="Submit"
+            onclick="return validarFormulario()"
+          />
         </div>
       </form>
     </div>

@@ -2,11 +2,20 @@ var correoInput = document.getElementById("correo");
 var mensajeErrorCorreo = document.getElementById("mensajeErrorCorreo");
 var correoValido = 0;
 
+var passInput1 = document.getElementById("klabe1");
+var passInput2 = document.getElementById("klabe2");
+var mensajeError = document.getElementById("mensajeError");
+
+var nombreInput = document.getElementById("fname");
+var apellidoInput = document.getElementById("apellido");
+
+var fechaInput = document.getElementById("fnacimiento");
+
 correoInput.addEventListener("blur", function () {
     var regexCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     if (!regexCorreo.test(correoInput.value)) {
-        mensajeErrorCorreo.textContent = "El correo no es válido\n\n(correo@correo.com)";
+        mensajeErrorCorreo.textContent = "El correo no es válido (ejemplo@ejemplo.com)";
         correoValido = -1;
     } else {
         mensajeErrorCorreo.textContent = "";
@@ -14,9 +23,7 @@ correoInput.addEventListener("blur", function () {
     }
 });
 
-var passInput1 = document.getElementById("klabe1");
-var passInput2 = document.getElementById("klabe2");
-var mensajeError = document.getElementById("mensajeError");
+
 
 passInput1.addEventListener("input", function () {
     if (passInput1.value != passInput2.value) {
@@ -34,8 +41,6 @@ passInput2.addEventListener("input", function () {
     }
 });
 
-var nombreInput = document.getElementById("fname");
-var apellidoInput = document.getElementById("apellido");
 
 nombreInput.addEventListener("input", function () {
     if (nombreInput.value != "" || nombreInput.value != null) {
@@ -45,20 +50,38 @@ nombreInput.addEventListener("input", function () {
     }
 });
 
+var cursos = document.querySelectorAll('input[type="radio"][name="Curso"]');
+for (let i = 0; i < cursos.length; i++) {
+    var curso = cursos[i];
+    if (curso.selected) {
+        curso.value = curso.selected;
+    }
+}
+
+var nuevaVentana;
+
 function AbrirPopUp() {
-    var nuevaVentana = window.open("bigarrenLehioa.html?", "PopUp-BigarrenLehioa", "width=500,height=400");
+    nuevaVentana = window.open("bigarrenLehioa.html?ncorreo=" + correoInput.value + "&firstname=" + nombreInput.value + "&lastname=" + apellidoInput.value + "&fnacimi=" + fechaInput.value + "&Curso=" + curso.value, "PopUp-BigarrenLehioa", "width=600,height=500");
     nuevaVentana.focus();
 }
 
+function NuevaVentana() {
+    nuevaVentana = window.open("", _blank);
+    nuevaVentana.focus();
+}
+
+function CerrarPopUp() {
+    nuevaVentana.close()
+}
+
 function validarFormulario() {
-    var formulario = document.getElementById("finscripcion");
-    var elementosFormulario = formulario.elements;
+    var inputsFormulario = document.getElementsByTagName("input");
     var camposVacios = 0;
 
-    for (var i = 0; i < elementosFormulario.length; i++) {
-        var elemento = elementosFormulario[i];
+    for (var i = 0; i < inputsFormulario.length; i++) {
+        var elemento = inputsFormulario[i];
 
-        if (elemento.tagName == "INPUT" && elemento.value.trim() == "") {
+        if (elemento.value.trim() == "") {
             camposVacios++;
         }
     }

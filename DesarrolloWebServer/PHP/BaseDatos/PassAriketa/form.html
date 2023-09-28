@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Erabiltzaileen Kudeaketa</title>
+  </head>
+  <body>
+    <h1>Erabiltzaileen Kudeaketa</h1>
+
+    <form method="post" action="form.php">
+      <input type="text" name="username" placeholder="Erabiltzailea" required />
+      <input type="password" name="password" placeholder="Pasahitza" required />
+      <fieldset>
+        <legend>Zer nahi dozu egin?</legend>
+        <input type="radio" name="radioKudeaketa" value="signup" checked /> Alta eman
+        <input type="radio" name="radioKudeaketa" value="delete" /> Baja eman
+        <input type="radio" name="radioKudeaketa" value="changepassword" /> Pasahitza aldatu
+        <input type="radio" name="radioKudeaketa" value="userlist" /> Erabiltzaile Zerrenda
+      </fieldset>
+      <input type="submit" value="Kudeatu" />
+    </form>
+  </body>
+</html>

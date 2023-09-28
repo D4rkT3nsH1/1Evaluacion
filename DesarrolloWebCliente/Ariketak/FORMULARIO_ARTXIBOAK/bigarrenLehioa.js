@@ -1,48 +1,24 @@
-function obtenerValoresDeURL() {
-    var queryString = window.location.search;
+// Obtener la URL actual
+const currentURL = window.location.search;
+const currentURL1 = window.location.href;
 
-    var posicion = queryString.indexOf("?") + 1;
+console.log(currentURL);
+console.log(currentURL1);
 
-    var queryString = queryString.substring(posicion);
+// Crear un objeto URLSearchParams con los parámetros de la URL
+const urlParams = new URLSearchParams(currentURL.split('?')[1]);
 
-    var pares = queryString.split("&");
+// Obtener los valores de los parámetros
+const ncorreo = urlParams.get('ncorreo');
+const nklabe1 = urlParams.get('nklabe1');
+const nklabe2 = urlParams.get('nklabe2');
+const firstname = urlParams.get('firstname');
+const lastname = urlParams.get('lastname');
+const fnacimi = urlParams.get('fnacimi');
+const Curso = urlParams.get('Curso');
 
-    var valores = [];
-
-    for (var i = 0; i < pares.length; i++) {
-        var par = pares[i].split("=");
-        var clave = decodeURIComponent(par[0]);
-        var valor = decodeURIComponent(par[1]);
-        valores[clave] = valor;
-    }
-
-    return valores;
-}
-
-var valoresDeURL = obtenerValoresDeURL();
-
-var correo = valoresDeURL["ncorreo"];
-var nombre = valoresDeURL["firstname"];
-var apellido = valoresDeURL["lastname"];
-var fnacimiento = valoresDeURL["fnacimi"];
-var curso = valoresDeURL["Curso"];
-
-var emailTabla = document.getElementById("emailTable");
-emailTabla.textContent = correo;
-console.log("Valor de parametro1: " + correo);
-
-var nombreTabla = document.getElementById("firstnameTable");
-nombreTabla.textContent = nombre;
-console.log("Valor de parametro2: " + nombre);
-
-var apellidoTabla = document.getElementById("lastnameTable");
-apellidoTabla.textContent = apellido;
-console.log("Valor de parametro3: " + apellido);
-
-var fnaciTabla = document.getElementById("dateTable");
-fnaciTabla.textContent = fnacimiento;
-console.log("Valor de parametro4: " + fnacimiento);
-
-var cursoTabla = document.getElementById("subjectTable");
-cursoTabla.textContent = curso;
-console.log("Valor de parametro5: " + curso);
+var emailTable = document.getElementById("emailTable").textContent = ncorreo;
+var firstnameTable = document.getElementById("firstnameTable").textContent = firstname;
+var lastnameTable = document.getElementById("lastnameTable").textContent = lastname;
+var dateTable = document.getElementById("dateTable").textContent = firstname;
+var subjectTable = document.getElementById("subjectTable").textContent = Curso;

@@ -30,12 +30,12 @@
 
 		// Comprobamos la extensión del archivo
 		if (!in_array($extension, $extensionesValidas)) {
-			echo $izena . "La extensión del archivo no es válida";
+			echo $izena . ", la extensión del archivo no es válida";
 			$errores = 1;
 		}
 		// Comprobamos el tamaño del archivo
 		if ($filesize > $max_file_size) {
-			echo $izena . "La imagen debe de tener un tamaño inferior a 120 Mb";
+			echo $izena . ", la imagen debe de tener un tamaño inferior a 120 Mb";
 			$errores = 1;
 		}
 
@@ -43,7 +43,7 @@
 		if ($errores == 0) {
 			$nombreCompleto = $directorioSubida . $nombreArchivo;
 			move_uploaded_file($directorioTemp, $nombreCompleto);
-			echo ($izena . " el archivo se ha subido correctamente");
+			echo ($izena . ", el archivo se ha subido correctamente");
 		}
 	}
 	?>

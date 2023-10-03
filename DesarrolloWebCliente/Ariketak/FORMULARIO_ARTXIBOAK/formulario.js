@@ -66,7 +66,7 @@ function AbrirPopUp() {
 }
 
 function NuevaVentana() {
-    nuevaVentana = window.open("", _blank);
+    nuevaVentana = window.open("bigarrenLehioa.html?ncorreo=" + correoInput.value + "&firstname=" + nombreInput.value + "&lastname=" + apellidoInput.value + "&fnacimi=" + fechaInput.value + "&Curso=" + curso.value, '_blank');
     nuevaVentana.focus();
 }
 

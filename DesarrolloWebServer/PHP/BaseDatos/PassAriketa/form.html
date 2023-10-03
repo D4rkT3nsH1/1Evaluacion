@@ -8,15 +8,33 @@
 
     <form method="post" action="form.php">
       <input type="text" name="username" placeholder="Erabiltzailea" required />
-      <input type="password" name="password" placeholder="Pasahitza" required />
-      <fieldset>
+      <div style="display: flex; flex-direction: row;">
+        <input
+          type="password"
+          name="password"
+          placeholder="Pasahitza"
+          required
+        />
+        <input
+          type="password"
+          id="newPass"
+          name="newpassword"
+          placeholder="New Pasahitza"
+        />
+      </div>
+
+      <fieldset id="fs">
         <legend>Zer nahi dozu egin?</legend>
-        <input type="radio" name="radioKudeaketa" value="signup" checked /> Alta eman
-        <input type="radio" name="radioKudeaketa" value="delete" /> Baja eman
-        <input type="radio" name="radioKudeaketa" value="changepassword" /> Pasahitza aldatu
-        <input type="radio" name="radioKudeaketa" value="userlist" /> Erabiltzaile Zerrenda
+        <input type="radio" name="radioKudeaketa" value="signup" checked /> Alta
+        eman <input type="radio" name="radioKudeaketa" value="delete" /> Baja
+        eman
+        <input type="radio" name="radioKudeaketa" value="changepassword" />
+        Pasahitza aldatu
+        <input type="radio" name="radioKudeaketa" value="userlist" />
+        Erabiltzaile Zerrenda
       </fieldset>
       <input type="submit" value="Kudeatu" />
     </form>
+    <script src="form.js" type="text/javascript"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@ $conn = new mysqli($servidor, $usuario, $password, $dbname);
 if ($conn->connect_error) {
     die("Ezin izan da konexioa ezarri: " . $conn->connect_error);
 }
+
 if (isset($_POST["radioKudeaketa"])) {
     $opcionSeleccionada = $_POST["radioKudeaketa"];
     // 2.1 Erabiltzailearen Alta
@@ -56,10 +57,10 @@ if (isset($_POST["radioKudeaketa"])) {
     // 2.3 Pasahitzaren Aldaketa
     else if ($opcionSeleccionada === "changepassword") {
         $username = $_POST["username"];
-        $oldpassword = $_POST["oldpassword"];
+        $password = $_POST["password"];
         $newpassword = $_POST["newpassword"];
 
-        $check_user = "SELECT * FROM ERABILTZAILEAK WHERE USER='$username' AND PASSWORD='$oldpassword'";
+        $check_user = "SELECT * FROM ERABILTZAILEAK WHERE USER='$username' AND PASSWORD='$password'";
         $result = $conn->query($check_user);
 
         if ($result->num_rows == 0) {

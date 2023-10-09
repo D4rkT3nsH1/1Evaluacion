@@ -1,5 +1,7 @@
 {
     "editor.fontSize": 12,
     "editor.lineHeight": 1.25,
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "php.debug.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
 }

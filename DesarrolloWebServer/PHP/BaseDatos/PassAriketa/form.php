@@ -1,4 +1,6 @@
 <?php
+session_start();
+$opcionSeleccionada = -1; //para que no de error al reiniciar la página
 // Konexioa sortu
 $servidor = 'localhost:3306';
 $usuario = 'root';
@@ -58,7 +60,6 @@ if (isset($_POST["radioKudeaketa"])) {
     else if ($opcionSeleccionada === "changepassword") {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $newpassword = $_POST["newpassword"];
 
         $check_user = "SELECT * FROM ERABILTZAILEAK WHERE USER='$username' AND PASSWORD='$password'";
         $result = $conn->query($check_user);
@@ -66,12 +67,12 @@ if (isset($_POST["radioKudeaketa"])) {
         if ($result->num_rows == 0) {
             echo "Errorea: Erabiltzailea ez da existitzen edo pasahitza ez da zuzena.";
         } else {
-            $update_password = "UPDATE ERABILTZAILEAK SET PASSWORD='$newpassword' WHERE USER='$username'";
-            if ($conn->query($update_password) === TRUE) {
-                echo "Pasahitza aldatuta.";
-            } else {
-                echo "Errorea: " . $conn->error;
-            }
+            $_SESSION["user"] = $username;
+            echo "<form id='miformu' name='miformu' method='post'>";
+            echo "<label for='pasahitzaberria'>Pasahitza berria:</label>";
+            echo "<input type='password' name='newPass' id='newPass'>";
+            echo "<input name='cambioPass' type='submit' id='submit' value='bidali'>";
+            echo "</form>";
         }
         echo "</br><a href='form.html'>Volver atras</a>";
     }
@@ -104,5 +105,17 @@ if (isset($_POST["radioKudeaketa"])) {
         echo "</br><a href='form.html'>Volver atras</a>";
     }
 }
+
+if (isset($_POST["cambioPass"])) {
+    $_username = $_SESSION["user"];
+    $newpassword = $_POST["newPass"];
+    $update_password = "UPDATE ERABILTZAILEAK SET PASSWORD='$newpassword' WHERE USER='$_username'";
+    if ($conn->query($update_password) === TRUE) {
+        echo "Pasahitza aldatuta.";
+    } else {
+        echo "Errorea: " . $conn->error;
+    }
+}
+
 $conn->close();
 ?>

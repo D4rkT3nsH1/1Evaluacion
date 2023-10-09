@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adibidea</title>
+    <style>
+        body{
+            background-color:rgb(255, 207, 173);
+            margin:0;
+            padding:20px;
+        }
+        header{
+            display:flex;
+            justify-content: space-between;
+        }
+        form{
+            padding:15px
+        }
+        textarea{
+            width: 100%;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>$_SESSION: <small><?php echo $actual_session_id; ?> <a href="bestebat.php">Beste Orrri Bat</a></small></h3>
+        <form method="post">
+            <input id="user1" name="user" type="text" value="" placeholder="Email">
+            <input name="pass" type="password" value="" placeholder="Pass">
+            <button name="loginbutton" type="submit">Login</button>
+        </form>
+        <form method="post">
+            <button name="logoutbutton" type="submit">Logout</button>
+        </form>
+    </header>
+    <textarea><?php echo print_r($_SESSION,true); ?></textarea>
+</body>
+</html>

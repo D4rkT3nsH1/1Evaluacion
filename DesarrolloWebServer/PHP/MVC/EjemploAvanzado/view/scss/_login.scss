@@ -1,0 +1,109 @@
+#imgbloque {
+    width: $logwidth;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+        width: $tamainoimg;
+    }
+}
+
+#bloquelogin {
+    width: $logwidth;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: $bloque-marg-top;
+    margin-bottom: $bloque-marg-bottom;
+    padding: $logpadding;
+
+    #div-login {
+        width: $tamainobloque;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        border: $logborde;
+        
+
+        #login {
+            width: $logancho;
+
+            #login-titulo {
+                text-align: center;
+            }
+
+            .login-puntos {
+                display: flex;
+                flex-direction: column;
+                margin-top: $logmargin-top;
+                margin-bottom: $logmargin-bottom;
+                width: $logwidth;
+                font-size: large;
+
+                .log-form-control {
+                    padding: $logpadding;
+                    border: $logborde;
+
+                    &:hover {
+                        @include sombras();
+                    }
+                }
+            }
+
+            .log-divbotones {
+                text-align: center;
+
+                .log-btn1 {
+                    font-size: small;
+                    margin: $log-btn-margen;
+                    width: $log-btn-width;
+                    height: $log-btn-height;
+                    background-color: $blanco;
+                    border-color: $verde-claro;
+                    color: $verde-oscuro;
+                    border-radius: $log-borde;
+                    text-decoration: none;
+
+                    &:hover {
+                        border-color: $verde-oscuro;
+                        background: $verde-claro;
+                        color: $blanco;
+                        transition-duration: $log-transition;
+                    }
+
+                    .log-btnatzera {
+                        text-decoration: none;
+                        color: $verde-oscuro;
+                    }
+                }
+
+                .log-btn2 {
+                    font-size: small;
+                    width: $reg-btn-width;
+                    margin-bottom: $log-btn-margen;
+                    height: $log-btn-height;
+                    background-color: $blanco;
+                    border-color: $verde-claro;
+                    color: $verde-oscuro;
+                    border-radius: $log-borde;
+                    text-decoration: none;
+
+                    &:hover {
+                        border-color: $verde-oscuro;
+                        background: $verde-claro;
+                        color: $blanco;
+                        transition-duration: $log-transition;
+                    }
+
+                    .log-btnatzera {
+                        text-decoration: none;
+                        color: $verde-oscuro;
+                    }
+                }
+            }
+        }
+    }
+
+}

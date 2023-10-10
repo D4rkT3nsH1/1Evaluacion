@@ -1,0 +1,387 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    border-bottom: 1px solid black;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    width: $navbar-width;
+
+    #navbar-logo {
+        width: $navbarlogo-width;
+
+        img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $logo-width;
+            height: $logo-heigth;
+        }
+    }
+
+    #log {
+        display: none;
+        justify-content: flex-end;
+    }
+
+    #navbarNavDropdown {
+        width: $navbarmenu-width;
+
+        ul li {
+            margin-left: $navbarmenu-margin;
+            margin-right: $navbarmenu-margin;
+
+            a:hover {
+                transition: transform 125ms;
+                transform: translateY(-5px);
+
+            }
+        }
+    }
+
+    #navbar-idioma {
+        width: $navbaridioma-width;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-top: $btn-paddingtop;
+        padding-right: $btn-paddingright;
+
+        .menu {
+            text-decoration: none;
+            color: $verde-amarillo;
+        }
+    }
+}
+
+#bloquecarrusel {
+    width: $carr-width;
+    display: flex;
+    justify-content: center;
+
+    #carrusel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: $carr-margin;
+        width: $carrusel-width;
+
+        .logo_carrusel {
+            display: flex;
+            justify-content: center;
+            width: $carr-logo-width;
+            padding: $carr-padding;
+            align-items: center;
+
+            .iniciologo {
+                width: $carr-img-width;
+            }
+        }
+
+        #carouselExampleSlidesOnly {
+            width: $carr-width;
+            object-fit: cover;
+            shape-image-threshold: unset;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+
+#cuerpoinicio {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    #inicioSobreNosotros {
+        display: flex;
+        flex-direction: row;
+        width: $guri-width;
+        padding: $guri-padding;
+        border: solid $negro 3px;
+        border-radius: $guri-border-radius;
+
+        #textosobrenosotrosinicio {
+            width: $guri-text-width;
+
+            .boton_personalizado {
+                background-color: $verde;
+                border: none;
+                border-radius: $guri-btn-borde;
+                color: $blanco;
+                padding: $guri-btn-padding;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: $guri-btn-fontsize;
+            }
+
+            .boton_personalizado:hover {
+                box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+        #imagensobrenosotrosinicio {
+            width: $guri-img-width;
+            margin-left: $guri-img-margin;
+        }
+    }
+
+    #imagenesinicio {
+        display: flex;
+        flex-direction: row;
+        width: $kate-width;
+        justify-content: space-between;
+
+        .contenedor {
+            width: $kate-div-width;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+
+            .imglink {
+                width: $kate-img-width;
+                height: auto;
+            }
+
+            .textoImagen {
+                width: $kate-text-width;
+                color: $blanco;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                top: $kate-text-top;
+                left: $kate-text-left;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .contenedor:hover {
+            transform: scale(1.05);
+            transition: 0.2s;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: $footer-width;
+    background-color: $verde;
+    height: auto;
+    padding-bottom: $footer-paddbottom;
+
+    .fondofooter {
+        width: $footer-div-width;
+
+        #cardsfooter {
+            display: flex;
+            flex-direction: row;
+            margin-top: $footer-div-margintop;
+
+            .cajafooter {
+                display: flex;
+                flex-direction: column;
+                width: $footer-bloque-width;
+                align-items: center;
+
+                .footer-links {
+                    list-style: none;
+
+                    li {
+                        a {
+                            color: $negro;
+                            text-decoration: none;
+                        }
+
+                    }
+                }
+
+                img {
+                    width: $footer-img-width;
+                }
+
+                #logofooter {
+                    width: $footer-img-logo-width;
+                }
+
+            }
+
+            #footerimg {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: $footer-bloque-width;
+                align-items: center;
+
+                img {
+                    width: $footer-img-logo-width;
+                }
+            }
+        }
+
+        #cuboredes {
+            display: flex;
+            justify-content: center;
+
+            #redessociales {
+                width: $footer-div-redes-width;
+                display: flex;
+                justify-content: space-around;
+
+                .redes {
+                    width: $footer-redes-width;
+                }
+            }
+        }
+    }
+}
+
+#copy {
+    height: $footer-copy-height;
+    background-color: $negro;
+    color: $blanco;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: $footer-copy-padding;
+}
+
+@media (max-width: 1201px) {
+
+    #navbar {
+
+        #navbar-logo {
+            display: none;
+        }
+    }
+
+    #bloquecarrusel {
+        #carrusel {
+            width: $carr-media-width;
+
+            .logo_carrusel {
+                display: none;
+            }
+        }
+    }
+
+    #cuerpoinicio {
+
+        #inicioSobreNosotros {
+
+            #textosobrenosotrosinicio {
+                width: $guri-media-text-width;
+            }
+
+            #imagensobrenosotrosinicio {
+                display: none;
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    #navbar {
+
+        #navbar-logo {
+            display: block;
+            width: $navbar-media-logo-width;
+        }
+
+        #log {
+            width: $navbar-media-login-width;
+            display: block;
+            display: flex;
+        }
+
+        #navbarNavDropdown {
+            width: $navbar-media-dropdown-width;
+        }
+
+        form {
+            #user {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+
+        .fondofooter {
+
+            #cardsfooter {
+
+                .cajafooter {
+                    width: $footer-media-width-1;
+                }
+
+                #footerimg {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 726px) {
+
+    #navbar {
+
+        #navbar-logo {
+            width: $navbar-media-divlogo-width;
+
+            img {
+                width: $navbar-media-logo2-width;
+            }
+        }
+    }
+
+    #cuerpoinicio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        #imagenesinicio{
+            width: $kate-media-img-width;
+            flex-direction: column;
+            left: $kate-media-img-left;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $negro;
+
+            .contenedor{
+                border: 1px solid $negro;
+                width: $kate-media-cont-width;
+                margin: $kate-media-cont-margin;
+            }
+        }
+    }
+
+    footer {
+
+        .fondofooter {
+
+            #cardsfooter {
+                flex-direction: column;
+
+                .cajafooter {
+                    width: $footer-media-width-2;
+                }
+
+                #footerimg {
+                    display: none;
+                }
+            }
+        }
+    }
+}

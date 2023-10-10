@@ -1,0 +1,78 @@
+#imgbloque {
+    width: $logwidth;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+        width: $tamainoimg;
+    }
+}
+
+#bloqueregistrar {
+    width: $logwidth;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: $bloque-marg-top;
+    margin-bottom: $bloque-marg-bottom;
+    padding: $logpadding;
+
+    #div-registrar {
+        width: $tamainobloque;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        border: $logborde;
+
+        #registrar {
+            width: $logancho;
+
+            #registrar-titulo {
+                text-align: center;
+            }
+
+            .registrar-puntos {
+                display: flex;
+                flex-direction: column;
+                margin-top: $logmargin-top;
+                margin-bottom: $logmargin-bottom;
+                width: $logwidth;
+                font-size: large;
+
+                .reg-form-control {
+                    padding: $logpadding;
+                    border: $logborde;
+
+                    &:hover {
+                        @include sombras();
+                    }
+                }
+            }
+
+            #reg-divbotones {
+                text-align: center;
+
+                .reg-btn {
+                    font-size: small;
+                    margin: $log-btn-margen;
+                    width: $log-btn-width;
+                    height: $log-btn-height;
+                    background-color: $blanco;
+                    border-color: $verde-claro;
+                    color: $verde-oscuro;
+                    border-radius: $log-borde;
+                    text-decoration: none;
+
+                    &:hover {
+                        border-color: $verde-oscuro;
+                        background: $verde-claro;
+                        color: $blanco;
+                        transition-duration: $log-transition;
+                    }
+                }
+            }
+        }
+    }
+}

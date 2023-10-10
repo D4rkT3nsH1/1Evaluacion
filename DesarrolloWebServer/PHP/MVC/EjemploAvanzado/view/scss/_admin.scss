@@ -1,0 +1,52 @@
+#update {
+	display: none;
+}
+
+.celda_imagen {
+	width: 4em;
+}
+
+#main {
+	width: $admin-main-width;
+	display: flex;
+	justify-content: center;
+
+	#container_c {
+		width: $admin-cont-width;
+
+		table{
+			width: $admin-main-width;
+			text-align: center;
+			font-size:large;
+			td{
+				border: 1px solid black;
+			}
+		}
+	}
+
+	
+}
+
+#main2 {
+	width: $admin-main-width;
+	display: flex;
+	justify-content: center;
+
+	#bloques{
+		width: $admin-cont-width;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	#container_m {
+
+		table{
+			width: $admin-main-width;
+			text-align: center;
+			font-size:large;
+			td{
+				border: 1px solid black;
+			}
+		}
+	}
+}

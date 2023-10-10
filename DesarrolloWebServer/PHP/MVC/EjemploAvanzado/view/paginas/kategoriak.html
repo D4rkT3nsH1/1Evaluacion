@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../scss/style.css">
+  <title>4RBIKE</title>
+  <link rel="icon" href="../img/logo.PNG">
+  <link href="/view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-1" id="navbar">
+      <div class="container-fluid">
+
+        <a id="navbar-logo" href="../index.html">
+          <img src="../../view/img/index/logo1.png" alt="">
+        </a>
+
+        <a id="log" href="../paginas/login.html">
+          <img src="../../view/img/usuario-de-perfil.png" alt="" style="width: 30px;">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Sarrera</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="kategoriak.html" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">Kategoriak</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#Birziklatu">Birziklatzea</a></li>
+                <li><a class="dropdown-item" href="#Adaptazioa">Adaptazioa</a></li>
+                <li><a class="dropdown-item" href="#Motorizazioa">Motorizazioa</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="../paginas/sobrenosotros.html">Guri buruz</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="../paginas/soporte.html">Soporte Teknikoa</a>
+            </li>
+
+          </ul>
+
+          <form class="d-flex" role="search">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="user" href="../paginas/login.html">
+                  <img src="../../view/img/usuario-de-perfil.png" alt="" style="width: 30px;">
+                </a>
+              </li>
+              <li class="nav-item">
+                <img src="../../view/img/pais-vasco.png" alt="" style="width: 30px; margin-right: 10px;">
+                <img src="../../view/img/united-kingdom.png" alt="" style="width: 30px;">
+              </li>
+            </ul>
+          </form>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <div class="contenidoCategorias">
+
+      <div class="tiposCategorias" id="Birziklatu">
+
+        <h1>Birziklatu</h1>
+        <p>
+          Beste garai bateko bizikleta-bitxirik ba al duzu gordeta biltegian? Jatorrizko egoerara itzuli eta lehen
+          egunean bezala distira egitea nahi al duzu, baina bere esentzia galdu gabe?
+        </p>
+
+        <div id="contenedorAntesDespues">
+          <h5>Aurretik</h5>
+          <h5>Geroago</h5>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../img/productos/bici1entero.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/productos/bici2entero.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/productos/bici3entero.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <hr>
+      </div>
+
+      <hr>
+
+
+      <div class="tiposCategorias" id="Adaptazioa">
+        <h1>Adaptazioa</h1>
+
+        <div class="contenedor">
+          <nav id="navProductos">
+            <a id="gurpila" class="componentes">GURPILAK</a>
+            <a id="frenoa" class="componentes">FRENOAK</a>
+            <a id="katea" class="componentes">KATEAK</a>
+            <a id="zela" class="componentes">ZELAK</a>
+            <a id="eskulekua" class="componentes">ESKULEKUAK</a>
+            <a id="pedala" class="componentes">PEDALAK ETA BIELAK</a>
+            <a id="etetea" class="componentes">ETETEAK</a>
+            <a id="besteak" class="componentes">BESTEAK</a>
+          </nav>
+        </div>
+        <br>
+        <div id="section" class="contenido-carta">
+
+        </div>
+
+        <br>
+
+        <hr>
+
+      </div>
+
+      <hr>
+
+      <div class="tiposCategorias" id="Motorizazioa">
+
+        <h1>Motorizazioa</h1>
+        <p>
+          Ez galdu kit hauek zure bizikleta "elektrifikatzeko". Gurpil motorizatu bat edo erdiko motor bat jar dezakezu
+          zure ohiko bizikletan.
+        </p>
+
+        <div class="contenedor">
+
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="../img/productos/kit_electrico1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">M820</h5>
+                  <p class="card-text">
+                  <p>2,3 kg besterik ez ditu, puntu guztietan konbentzitzen du 250 W-ko potentzia nominalarekin eta 75
+                    Nm indartsuarekin (gehienezko momentu eraginkorra) 120 rpm-ko kadentzia hedatutako gehienezko
+                    euskarria lortzeko. Ezin hobeto sintonizatutako momentu-sentsoreari esker, potentzia zehatza
+                    kontrolatu dezake pedalearen indarraren arabera.</p>
+                  </p>
+                  <button type='button' class='btn btn-outline-success'>Erosi</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="../img/productos/kit_electrico2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">M215</h5>
+                  <p class="card-text">Indartsua, errentagarria, mantentzeko erraza eta instalatzeko erraza. Bere
+                    250W-arekin
+                    potentzia nominala eta 80 Nm gehienez. momentua, zure ibilaldirako laguntza ongietorria baino
+                    gehiago eskaintzen dio.
+                    68 mm-ko zabalerako beheko euskarria duten markoekin bateragarria.</p>
+                  <button type='button' class='btn btn-outline-success'>Erosi</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <hr>
+      </div>
+
+
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div class="fondofooter">
+      <div id="cardsfooter">
+
+        <div class="cajafooter">
+          <h6>KONTAKTUA</h6>
+          <ul class="footer-links">
+            <li>
+              <p><img src="../img/marcador-de-posicion.png" alt=""> Eibar, Indalecio Ojanguren kalea</p>
+            </li>
+            <li>
+              <p><img src="../img/arroba.png" alt=""> 4RBikess@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+
+        <a id="footerimg" href="../index.html">
+          <img id="logofooter" src="../img/logo.PNG" alt="">
+        </a>
+
+        <div class="cajafooter">
+          <h6>ESTEKAK</h6>
+          <ul class="footer-links">
+            <li>
+              <p><a href="../paginas/sobrenosotros.html"> Guri Buruz</a></p>
+            </li>
+            <li>
+              <p><a data-bs-toggle="modal" data-bs-target="#exampleModal" href="">Enpresa Politika</a></p>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Enpresa politika</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Kanpo-politikak</h5>
+                      <ul>
+                        <li>Bezero guztiei tratu bidezkoa eta kalitatezkoa ematea.</li>
+                        <li>Kalitatea eta bikaintasuna duten proiektuak errealizatzea</li>
+                        <li>Bezeroak proiektuak egiteko ematen duen informazioa konfidentziala da.</li>
+                        <li>Entregatzeko epeak mugiezinak dira</li>
+                        <li>Gobernuaren politika eta betekizunekin lerrokatzea</li>
+                        <li>Kalifikatutako hautagai guztiei enplegua lortzeko aukera berdinak ematea, larruazal, sexua, erlijioa etab… kontutan hartu gabe</li>
+                        <li>Konpetentzia lehiala izatea beste enpresekin</li>
+                        <li>Zintzoki jardutea bezeroari kalterik egin gabe</li>
+                      </ul>
+                      <br>
+
+                      <h5>Barne-politikak</h5>
+                      <ul>
+                        <li>Laneko arriskuen prebentzioari buruzko derrigorrezko ikastaro bat ematea</li>
+                        <li>Langileei merkataritza-kudeaketako eta saldu osteko kudeaketako teknikak ematea</li>
+                        <li>Talde-lanaren espiritua sustatzea</li>
+                        <li>Sormena sustatzea</li>
+                        <li>Errespetu faltarik ez onartzea</li>
+                        <li>Langilearen sexua, etnia edo arraza ez diskriminatzea</li>
+                        <li>Gure langile guztiei osasun-aseguru pribatu bat ematea</li>
+                        <li>Langilea lantokitik 50 km baino urrutirago bizi bada, garraioa enpresaren kontura izango da.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+        <br>
+
+      </div>
+
+      <hr>
+      <br>
+
+      <div id="cuboredes">
+        <div id="redessociales">
+          <a href="https://www.instagram.com/"><img class="redes" src="../img/logoinsta.png" alt=""></a>
+          <a href="https://twitter.com/home?lang=es"><img class="redes" src="../img/logotwitter.png" alt=""></a>
+          <a href="https://www.youtube.com/"><img class="redes" src="../img/logoyoutube.png" alt=""></a>
+          <a
+            href="https://es.linkedin.com/?src=go-pa&trk=sem-ga_campid=18146679037_asid=140850334975_crid=619061882347_kw=linkedin_d=c_tid=kwd-148086543_n=g_mt=e_geo=20271_slid=&mcid=6968657504633266178&cid=&gclid=CjwKCAjw79iaBhAJEiwAPYwoCEUIxNIy39bUNcDhSno_ETM9Dv2jqFVqn0bb0lQ1tkERUHeRd4g7LBoCyv8QAvD_BwE&gclsrc=aw.ds"><img
+              class="redes" src="../img/logolinkedin.png" alt=""></a>
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div id="copy">
+    <p>Copyright © 2022 All Rights Reserved by 4RBIKES.</p>
+  </div>
+
+
+  <script src="../js/produktuak.js"></script>
+  <script src="/view/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

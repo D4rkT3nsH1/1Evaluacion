@@ -1,0 +1,249 @@
+//colores
+$negro: #000000;
+$blanco: white;
+$verde-claro: #65D831;
+$verde: #4CAF50;
+$verde-oscuro: #2D5E16;
+$verde-amarillo: #B6E635;
+$amarillo: #E6E635;
+
+//-------------------------------------------------NAVBAR----------------------------------------------//
+
+//navbar
+$navbar-width: 100%;
+
+//navbar logo
+$navbarlogo-width: 25%;
+$logo-width: 250px;
+$logo-heigth: 100%;
+
+//navbar menu
+$navbarmenu-width: 69%;
+$menu-color: $verde-claro;
+$navbarmenu-margin: 20px;
+
+//navbar idioma
+$navbaridioma-width: 6%;
+$btn-paddingright: 50px;
+$btn-paddingtop: 20px;
+
+//navbar media query
+$navbar-media-logo-width: 50%;
+$navbar-media-login-width: 32%;
+$navbar-media-dropdown-width: 18%;
+$navbar-media-logo2-width: 180px;
+$navbar-media-divlogo-width: 40%;
+
+//----------------------------------------------FIN NAVBAR----------------------------------------------//
+
+//------------------------------------------------FOOTER------------------------------------------------//
+
+//footer
+$footer-width: 100%;
+$footer-paddbottom: 20px;
+$footer-div-width: 90%;
+$footer-div-margintop: 30px;
+$footer-bloque-width: 33.33%;
+$footer-img-width: 20px;
+$footer-img-logo-width: 100px;
+$footer-div-redes-width: 40%;
+$footer-redes-width: 30px;
+$footer-copy-height: 50px;
+$footer-copy-padding: 10px;
+
+//footer media query
+$footer-media-width-1: 50%;
+$footer-media-width-2: 100%;
+
+//---------------------------------------------FIN FOOTER-----------------------------------------------//
+
+//-----------------------------------------------INDEX--------------------------------------------------//
+
+//header
+$fondo: $negro;
+
+//bloque del carrusel
+$carr-width: 100%;
+$carr-margin: 15px;
+$carrusel-width: 94%;
+$carr-logo-width: 50%;
+$carr-padding: 1em;
+$carr-img-width: 250px;
+
+//imagenes
+$bici_img_carrusel: (
+    "../img/bici1.jpg",
+    "../img/bici2.jpg",
+    "../img/bici3.jpg"
+);
+
+//bloque "guri buruz"
+$guri-width: 80%;
+$guri-padding: 20px;
+$guri-border-radius: 10px;
+$guri-text-width: 70%;
+$guri-btn-borde: 10px;
+$guri-btn-padding: 15px 32px;
+$guri-btn-fontsize: 16px;
+$guri-img-width: 30%;
+$guri-img-margin: 20px;
+
+//imagenes de cada punto de categoria
+$kate-width: 90%;
+$kate-div-width: 30%;
+$kate-img-width: 100%;
+$kate-text-width: 100%;
+$kate-text-top: 50%;
+$kate-text-left: 50%;
+
+//index media query
+$carr-media-width: 70%;
+$guri-media-text-width: 100%;
+$kate-media-img-width: 100%;
+$kate-media-img-left: 10%;
+$kate-media-cont-width: 80%;
+$kate-media-cont-margin: 20px;
+
+//--------------------------------------------FIN INDEX-------------------------------------------------//
+
+//------------------------------------------LOGIN-REGISTRAR---------------------------------------------//
+
+//ancho100%
+$logwidth: 100%;
+
+//imglogin
+$tamainoimg: 280px;
+
+//bloquelogin
+$tamainobloque: 450px;
+$logborde: 1px solid rgba(108, 210, 12, 0.44);
+$logancho: 90%;
+$bloque-marg-top: 30px;
+$bloque-marg-bottom: 50px;
+$logmargin-top: 10px;
+$logmargin-bottom: 10px;
+$logpadding: 10px;
+
+@mixin sombras {
+    box-shadow: 4px 4px 4px $verde-claro;
+}
+
+@mixin sombras2 {
+    box-shadow: 3px 3px 10px $negro;
+}
+
+//btn1
+$log-btn-margen: 20px;
+$log-btn-width: 90px;
+$log-btn-height: 40px;
+$log-borde: 6px;
+$log-transition: 0.3s;
+
+//bt2
+$reg-btn-width: 200px;
+
+//----------------------------------------FIN LOGIN-REGISTRAR------------------------------------------//
+
+//----------------------------------------------ADMIN--------------------------------------------------//
+
+//tabla
+$admin-main-width: 100%;
+$admin-cont-width: 80%;
+
+
+//--------------------------------------------FIN ADMIN------------------------------------------------//
+
+//------------------------------------------SOBRE NOSOTROS---------------------------------------------//
+
+//titulo
+$sob-titulo-width: 100%;
+$sob-titulo-margintop: 15px;
+
+//contenido "el texto con las imagenes"
+$sob-width: 100%;
+$sob-cont-div-width: 80%;
+$sob-cont-hueco-width: 100%;
+$sob-cont-hueco-height: 70px;
+$sob-cont-width: 100%;
+$sob-cont-img-width: 35%;
+$sob-cont-text-width: 65%;
+$sob-cont-text-padding: 10%;
+
+//los tres objetivos
+$sob-obj-div-width: 80%;
+$sob-obj-div-margin: 40px;
+$sob-obj-height: 300px;
+$sob-obj-width: 300px;
+$sob-obj-border: 50%;
+$sob-obj-padding: 20px;
+
+//media query
+$sob-media-margin: 10px;
+$sob-media-marginbotton: 30px;
+$sob-media-img-width: 50%;
+$sob-media-text-padding: 0%;
+$sob-media-text-width: 80%;
+
+//----------------------------------------FIN SOBRE NOSOTROS-------------------------------------------//
+
+//-------------------------------------------KATEGORIAK------------------------------------------------//
+
+
+$kat_width:100%;
+$kat_cont_width:90%;
+
+//Birziklatu partea
+$kat_birz_margin:50px;
+$kat_birz_width:100%;
+
+//Adaptazio partea
+$kat_adap_width:100%;
+$kat_adap_height:70px;
+$kat_adap_punto_width:100%;
+$kat_adap_punto_height:100%;
+$kat-adap-img-width: 300px;
+$kat-adap-width: 50%;
+
+//hover
+$kat-hover-transform: scale(1.05);
+$kat-hover-transition: 0.2s;
+$kat-hover-border: 2px;
+$kat-color-berde: #3DB142;
+
+//cards cargadas de sql
+$kat-card-grid: 1fr 1fr 1fr;
+$kat-card-width: 100%;
+$kat-card-margin: 20px;
+$kat-card-padding: 10px;
+$kat-card-border: 5px;
+$kat-card-img-width: 200px;
+$kat-card-btn-width: 60%;
+
+//media query
+$kat-media-grid-1: 1fr 1fr 1fr 1fr;
+$kat-media-grid-2: 1fr 1fr;
+$kat-media2-grid-1: 1fr 1fr;
+$kat-media2-grid-2: 1fr;
+
+//-----------------------------------------FIN KATEGORIAK----------------------------------------------//
+
+//--------------------------------------------SOPORTE--------------------------------------------------//
+
+$sop-main-div-width: 100%;
+$sop-main-titulo-margin: 20px;
+$sop-main-width: 50%;
+$sop-main-margin: 50px;
+$sop-main-izena-width: 40%;
+$sop-main-email-width: 60%;
+$sop-main-mezua-height: 150px;
+$sop-main-btn-width: 40%;
+
+//media query
+$sop-media-main-width-1: 70%;
+$sop-media-main-width-2: 80%;
+$sop-media-main-width-3: 90%;
+$sop-media-datuak-padding: 20px;
+$sop-media-datuak-width: 100%;
+$sop-media-datuak-margin: 10px;
+
+//------------------------------------------FIN SOPORTE------------------------------------------------//

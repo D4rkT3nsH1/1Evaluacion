@@ -1,0 +1,174 @@
+#titulosobrenosotros {
+    width: $sob-titulo-width;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: $sob-titulo-margintop;
+}
+
+#sobr-cont {
+    width: $sob-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    #contenidosobrenosotros {
+        width: $sob-cont-div-width;
+
+        #huecocajas {
+            width: $sob-cont-hueco-width;
+            height: $sob-cont-hueco-height;
+        }
+
+        #sobrenosotroscajas1 {
+            width: $sob-cont-width;
+            display: flex;
+            align-items: center;
+
+            .imagensobrenosotros {
+                width: $sob-cont-img-width;
+            }
+
+            #textosobrenosotros {
+                text-align: center;
+                align-items: center;
+                width: $sob-cont-text-width;
+                padding-left: $sob-cont-text-padding;
+            }
+        }
+
+        #sobrenosotroscajas2 {
+            width: $sob-cont-width;
+            display: flex;
+            align-items: center;
+
+            .imagensobrenosotros {
+                width: $sob-cont-img-width;
+            }
+
+            #textosobrenosotros2 {
+                text-align: center;
+                align-items: center;
+                width: $sob-cont-text-width;
+                padding-right: $sob-cont-text-padding;
+            }
+        }
+    }
+}
+
+#sobr-cont2 {
+    width: $sob-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    #sob-puntuak {
+        width: $sob-obj-div-width;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: $sob-obj-div-margin;
+
+        #baloreak {
+            height: $sob-obj-height;
+            width: $sob-obj-width;
+            border: 1px solid $negro;
+            border-radius: $sob-obj-border;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: $sob-obj-padding;
+            background-color: #ab91c5;
+        }
+
+        #misioa {
+            height: $sob-obj-height;
+            width: $sob-obj-width;
+            border: 1px solid $negro;
+            border-radius: $sob-obj-border;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: $sob-obj-padding;
+            background-color: #677c71;
+        }
+
+        #bisioa {
+            height: $sob-obj-height;
+            width: $sob-obj-width;
+            border: 1px solid $negro;
+            border-radius: $sob-obj-border;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: $sob-obj-padding;
+            background-color: #788b34;
+        }
+    }
+
+}
+
+@media (max-width: 1170px) {
+
+    #sobr-cont2 {
+
+        #sob-puntuak {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #baloreak {
+                margin: $sob-media-margin;
+            }
+
+            #misioa {
+                margin: $sob-media-margin;
+            }
+
+            #bisioa {
+                margin: $sob-media-margin;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    #sobr-cont {
+
+        #contenidosobrenosotros {
+
+            #sobrenosotroscajas1 {
+                display: flex;
+                flex-direction: column;
+
+                .imagensobrenosotros {
+                    margin-bottom: $sob-media-marginbotton;
+                    width: $sob-media-img-width;
+                }
+
+                #textosobrenosotros {
+                    padding-left: $sob-media-text-padding;
+                    width: $sob-media-text-width;
+                }
+            }
+
+            #sobrenosotroscajas2 {
+                display: flex;
+                flex-direction: column-reverse;
+
+                .imagensobrenosotros {
+                    margin-bottom: $sob-media-marginbotton;
+                    width: $sob-media-img-width;
+                }
+
+                #textosobrenosotros2 {
+                    padding-right: $sob-media-text-padding;
+                    width: $sob-media-text-width;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../scss/style.css" rel="stylesheet" type="text/css"/>
+  <link href="/view/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <title>4RBIKE</title>
+  <link rel="icon" href="../img/logo.PNG">
+</head>
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-1" id="navbar">
+      <div class="container-fluid">
+    
+        <a id="navbar-logo" href="../index.html">
+          <img src="../../view/img/index/logo1.png" alt="">
+        </a>
+    
+        <a id="log" href="../paginas/login.html">
+          <img src="../../view/img/usuario-de-perfil.png" alt="" style="width: 30px;">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Sarrera</a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="kategoriak.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategoriak</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="../paginas/kategoriak.html#Birziklatu">Birziklatzea</a></li>
+                <li><a class="dropdown-item" href="../paginas/kategoriak.html#Adaptazioa">Adaptazioa</a></li>
+                <li><a class="dropdown-item" href="../paginas/kategoriak.html#Motorizazioa">Motorizazioa</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link active" href="../paginas/sobrenosotros.html">Guri buruz</a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link active" href="../paginas/soporte.html">Soporte Teknikoa</a>
+            </li>
+    
+          </ul>
+    
+          <form class="d-flex" role="search">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="user" href="../paginas/login.html">
+                  <img src="../../view/img/usuario-de-perfil.png" alt="" style="width: 30px;">
+                </a>
+              </li>
+              <li class="nav-item">
+                <img src="../../view/img/pais-vasco.png" alt="" style="width: 30px; margin-right: 10px;">
+                <img src="../../view/img/united-kingdom.png" alt="" style="width: 30px;">
+              </li>
+            </ul>
+          </form>
+    
+        </div>
+    
+      </div>
+    </nav>
+    
+  </header>
+    
+  <div id="main">
+
+    <div id="container_c">
+        
+      <!-- TABLE with the all books -->
+    </div>
+
+  </div>
+
+  <br>
+
+  <div id="main2">
+
+    <div id="bloques">
+
+      <div id="container_m">
+
+        </div>
+
+          <!-- /////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+          <div id="insert">    
+            <h4>Osagaiak gehitu</h4>
+                
+            img_componentes:<br><input type="text" id="image_c"><br>
+            Tipo:<br><input type="text" id="type"><br>  
+            Stock:<br><input type="text" id="cantidad"><br> 
+            precio:<br><input type="text" id="price"><br>
+            ID_marca:<br><input type="text" id="idM"><br>      
+            <br>
+            <button id="btnInsert">Insert</button>
+          </div>
+
+          <!-- ////////////////////////////////////////////////////////////////////////////// -->
+
+          <div id="update" >
+            <h4>Osagaiak aldatu</h4>	
+            <br>
+            ID_componenete:
+            <br>
+            <input type="text" id="idComponente" readonly>
+            <br>
+            img_componentes:
+            <br>
+            <input type="text" id="imgC" >
+            <br>
+            tipo:<br>
+            <input type="text" id="tipo">
+            <br>
+            <br>
+            stock:<br>
+            <input type="text" id="stock">
+            <br>
+            <br>
+            precio:<br>
+            <input type="text" id="precio">
+            <br>
+            ID_marca:<br>
+            <input type="text" id="idMarca">
+            <br>
+            <br><br>
+            <button id="btnExecUpdate">Execute Update</button>
+        
+          </div>
+          <br>
+          
+    </div>
+  </div>
+
+
+<script src="/view/js/admin.js"></script> 
+
+</body>
+</html>

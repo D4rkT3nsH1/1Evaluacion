@@ -30,5 +30,4 @@ function Bikoitiak() {
   tabla.appendChild(tblBody);
   body.appendChild(tabla);
   tabla.setAttribute("border", "2");
-
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <ul id="sddm">
+            <li><a href="HASIERA.html">Home</a> </li>
+            <li><a href="AjustarFormatos.html">Ajustar Formatos</a> </li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="#">Rellenar Tabla</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+    <p></p>
+    <form id="pago" name="pago" action="#">
+        <fieldset class="fieldset_up">
+            <legend>Datos del comprador</legend>
+            <ol>
+                <li>
+                    <label for="izena">IZENA</label><input id="Izena" name="Izena" type="text">
+                </li>
+                <li>
+                    <label for="abizena">ABIZENA</label><input id="Abizena" name="Abizena" type="text">
+                </li>
+                <li>
+                    <label for="nota">NOTA</label><input id="Nota" name="Nota" type="text">
+                </li>
+            </ol>
+        </fieldset>
+        <input type="button" name="CREAR" id="CREAR" value="CREAR">
+    </form>
+
+    <p></p>
+
+    <table id="hemen">
+        <tr>
+            <td>IZENA</td>
+            <td>ABIZENA</td>
+            <td>NOTA</td>
+        </tr>
+    </table>
+
+    <script src="js/RellenarTabla.js" type="text/javascript"></script>
+</body>
+
+</html>

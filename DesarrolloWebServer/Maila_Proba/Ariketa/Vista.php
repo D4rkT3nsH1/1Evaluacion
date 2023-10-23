@@ -1,5 +1,6 @@
 <?php
-class Login_Bista
+
+class LogVista
 {
 
     //Logina egin aurretik agertuko dena, formulario osoa.
@@ -7,7 +8,7 @@ class Login_Bista
     public function HasierakoFormularioa()
     {
         ?>
-        <form method="POST" action="aukerak_kontrolatzailea.php">
+        <form method="POST" action="Controlador.php">
             <div>
                 <div>
                     <label><b>Erabiltzailea/ Usuario</b></label>
@@ -37,7 +38,7 @@ class Login_Bista
     public function Aukera_Eman()
     {
         ?>
-        <form method="POST" action="aukerak_kontrolatzailea.php">
+        <form method="POST" action="Controlador.php">
             <div>
                 <div>
                     <label><b>Zer da egin nahi duzuna?/ ¿Qué es lo que quieres hacer?</b></label>
@@ -89,17 +90,16 @@ class Login_Bista
 
       Dado un array asociativo (key es la pregunta y el value es una array con las posbles respuestas),
       muestra en pantalla la preguntas y respuestas.     */
-    public function galderak_marraztu($galdera_erantzunen_arraya)
+    public function galdera_erantzunak_marraztu($galdera_erantzunen_arraya)
     {
-
-        echo '<form method="POST" action="aukerak_kontrolatzailea.php">';
+        echo '<form method="POST" action="Controlador.php">';
         // Galderaren etiketa sortu/ Crear la etiqueta de la pregunta
         $kont = 0;
         foreach ($galdera_erantzunen_arraya as $galdera => $erantzunak) {
             echo "<b>" . $galdera . " &nbsp</b>";
 
             // Erantzunen menua osatu/ Crear el menú desplegable
-            echo '<select name="galderaJokoa' . $kont++ . '">';
+            echo '<select name="galdera' . $kont++ . '">';
 
             foreach ($erantzunak as $erantzuna) {
                 echo "<option value='" . $erantzuna . "'>" . $erantzuna . "</option>";
@@ -113,4 +113,3 @@ class Login_Bista
 
     }
 }
-

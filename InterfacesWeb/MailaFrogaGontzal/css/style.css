@@ -1,0 +1,72 @@
+#body {
+    background-color: #eee;
+}
+
+#formModal{
+    display: flex;
+    flex-direction: column;
+}
+
+#imagenRedonda {
+    display: flex;
+    justify-content: center;
+}
+
+#imagenRedonda img {
+    border-radius: 50%;
+    height: 600px;
+    width: 1000px;
+    transition: height 2s, width 2s;
+}
+
+#imagenRedonda:hover img {
+    height: 300px;
+    width: 450px;
+}
+
+#imagenPeque:hover {
+    content: url("../img/plane2.jpg");
+    height: 100px;
+    width: 100px;
+}
+
+#news {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.card-title {
+    font-size: 48px;
+}
+
+.card:nth-child(-n + 3) {
+    font-family: fantasy;
+}
+
+.card:nth-child(odd) {
+    background-color: green;
+    border-radius: 40px;
+    border: 3px solid blue;
+}
+
+.card:nth-child(even) {
+    background-color: gray;
+    border: 3px solid green;
+}

@@ -95,7 +95,7 @@ if (isset($_POST['jokatu_botoia'])) {
     $arrayPost = [];
 
     foreach ($_POST as $galderaID => $userErantzuna) {
-        if (strpos($galderaID, 'galderaJokoa') === 0) {
+        if (strpos($galderaID, 'galdera') === 0) {
             $arrayPost[] = $userErantzuna;
         }
     }

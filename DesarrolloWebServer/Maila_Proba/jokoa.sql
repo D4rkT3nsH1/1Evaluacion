@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `galderaktaula` (
   `galderaId` int(11) NOT NULL,
-  `galdera` varchar(30) DEFAULT NULL,
+  `galdera` varchar(50) DEFAULT NULL,
   `erantzunPosibleak` varchar(15) DEFAULT NULL,
   `erantzunOna` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

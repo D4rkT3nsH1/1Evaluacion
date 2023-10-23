@@ -10,11 +10,10 @@ $Modelo = new Jokalari_Modeloa;
 
 $Modelo->konektatu();
 
-$datuBaseGalderak = $Modelo->galderak_eskatu();
-
+/*
 //Galdera eta erantzun posibleen array asoziatiboa.
 //Array asociativo de la preguntas y posbles respuestas.
-$joko_arraya = [
+$galderakArraya = [
     "Zein da urrearen elemetu kimikoa?" => array("Fr", "Au", "Ur"),
     "Urdina eta gorriaren nahasketatatik zer ateratzen da?" => array("Berdea", "Morea"),
     "Zenbat da 4x4?" => array("7", "16", "14", "15")
@@ -28,6 +27,7 @@ $emaitzen_arraya = [
     "Urdina eta gorriaren nahasketatatik zer ateratzen da?" => "Morea",
     "Zenbat da 4x4?" => "16"
 ];
+*/
 
 //Logina egiaztatzen du, egokia ez bada mezua erakutsi eta formularioa berriro kargatuta.
 //Comprueba el login, si no es adecuado muestra un mensaje y el formulario.
@@ -62,7 +62,8 @@ if ($_SESSION["balioztatua"] && isset($_POST['botoia'])) {
                 break;
             case "jokatu":
                 echo "Sesioa: " . $_SESSION["Erab"];
-                $LoginVista->galdera_erantzunak_marraztu($joko_arraya);
+                $galderakArraya = $Modelo->galderak_eskatu();
+                $LoginVista->galdera_erantzunak_marraztu($galderakArraya);
                 break;
         }
     } else {
@@ -81,15 +82,10 @@ Si el login es correcto y se ha elegido la opción de jugar se analizan la respu
 la puntuación y se actualiza dicha puntuación el la DB.
 */
 if ($_SESSION["balioztatua"] && isset($_POST['jokatu_botoia'])) {
-    $puntuak = 0;
-    $kont = 0;
-    foreach ($emaitzen_arraya as $galdera => $erantzuna) {
-        if ($_POST['galdera' . $kont++] == $erantzuna) {
-            echo ($galdera . " galderaren erantzuna " . $erantzuna . " da. Beraz zuzena da, oso ondo puntuak lortu dituzu. <br><br>");
-            $puntuak += 3;
 
-        }
-    }
+    $emaitzenArraya = $Modelo->erantzunak_eskatu();
+    $puntuak = $Modelo->erantzunakBalidatu($emaitzenArraya);
+
     echo $puntuak . " puntu lortu dituzu. <br><br>";
     $Modelo->eguneratu_puntuazioa($_SESSION["Erab"], $puntuak);
     $LoginVista->Aukera_Eman();

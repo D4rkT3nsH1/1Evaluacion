@@ -35,10 +35,8 @@ class Jokalari_Modeloa
     // Puntuazioa eguneratuko da DBan. Se actualizará la puntuación en DB
     public function eguneratu_puntuazioa($user, $punt)
     {
-
         $sql = "UPDATE jokalariak SET puntuazio_max = puntuazio_max + " . $punt . "  WHERE erabiltzailea = '" . $user . "'";
         $this->mysqli->query($sql);
-
     }
 
     // Puntuazioaren arabera ordenatutako erabiltzaile zerrenda asoziatiboa itzuliko du.
@@ -63,9 +61,42 @@ class Jokalari_Modeloa
         $sql = "SELECT * FROM galderakTaula";
         $emaitza = $this->mysqli->query($sql);
 
+        $galderaZerrenda = array();
+
         foreach ($emaitza as $lerroa) {
-            $zerrenda[$lerroa['galdera']] = $lerroa['erantzunPosibleak'];
+            $galdera = $lerroa['galdera'];
+            $erantzunak = $lerroa['erantzunPosibleak'];
+            $galderaZerrenda[$galdera] = explode('/', $erantzunak);
         }
-        return $zerrenda;
+
+        return $galderaZerrenda;
+    }
+
+    public function erantzunak_eskatu()
+    {
+        $sql = "SELECT * FROM galderakTaula";
+        $emaitza = $this->mysqli->query($sql);
+
+        $erantzunZerrenda = array();
+
+        foreach ($emaitza as $lerroa) {
+            $galdera = $lerroa['galdera'];
+            $erantzunak = $lerroa['erantzunOna'];
+            $erantzunZerrenda[$galdera] = $erantzunak;
+        }
+        return $erantzunZerrenda;
+    }
+
+    public function erantzunakBalidatu($emaitzenArraya)
+    {
+        $puntuak = 0;
+        $kont = 0;
+        foreach ($emaitzenArraya as $galdera => $erantzuna) {
+            if ($_POST['galdera' . $kont++] == $erantzuna) {
+                echo ($galdera . " galderaren erantzuna " . $erantzuna . " da. Beraz zuzena da. <br><br>");
+                $puntuak += 3;
+            }
+        }
+        return $puntuak;
     }
 }

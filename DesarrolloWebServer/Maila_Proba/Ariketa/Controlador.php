@@ -84,10 +84,11 @@ la puntuación y se actualiza dicha puntuación el la DB.
 if ($_SESSION["balioztatua"] && isset($_POST['jokatu_botoia'])) {
 
     $emaitzenArraya = $Modelo->erantzunak_eskatu();
-    $puntuak = $Modelo->erantzunakBalidatu($emaitzenArraya);
+    $puntuak = $Modelo->erantzunakBalidatu($emaitzenArraya, $_SESSION["Erab"]);
 
     echo $puntuak . " puntu lortu dituzu. <br><br>";
     $Modelo->eguneratu_puntuazioa($_SESSION["Erab"], $puntuak);
+
     $LoginVista->Aukera_Eman();
 }
 

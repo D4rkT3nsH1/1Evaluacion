@@ -53,10 +53,6 @@ header {
 }
 
 .texto {
-    display: none;
-}
-
-figure:hover .texto {
     display: block;
     position: fixed;
     padding: 10px;
@@ -68,6 +64,7 @@ figure:hover .texto {
     color: darkslategray;
     background-color: gray;
     z-index: 50;
+    color: pointer;
 }
 
 .series_accion {
@@ -77,12 +74,13 @@ figure:hover .texto {
 
 .series_historica {
     border: 2px solid yellow;
-    opacity: 0.5;
+    cursor: grabbing;
 }
 
 .series_infantil {
     border: 2px solid yellow;
-    border-radius: 5%;    
+    border-radius: 5%;
+    cursor: pointer;
 }
 
 .pelis_accion {
@@ -92,10 +90,11 @@ figure:hover .texto {
 
 .pelis_historica {
     border: 2px solid blue;
-    opacity: 0.5;
+    cursor: grabbing;
 }
 
 .pelis_infantil {
     border: 2px solid blue;
     border-radius: 5%;
+    cursor: pointer;
 }

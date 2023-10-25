@@ -1,0 +1,101 @@
+body {
+    background-color: #eaeaea;
+}
+
+header h1 {
+    width: 80%;
+    margin: auto;
+    color: #6190ca;
+    text-align: center;
+}
+
+header h2 {
+    color: white;
+    background-color: #6190ca;
+    text-align: center;
+}
+
+#cartelera {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cartelera .imagen {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #6190ca;
+    box-sizing: border-box;
+}
+
+#cartelera img {
+    width: 175px;
+    height: 250px;
+    margin: 2px 15px;
+    border: 4px solid blue;
+    cursor: pointer;
+}
+
+#elementos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #4a6ba2;
+    font-size: 16px;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 12%;
+    width: 75%;
+    background-color: #eaeaea;
+}
+
+#elementos .texto {
+    display: none;
+    border: 2px solid gray;
+    box-shadow: 10px 10px 5px #5970B2;
+}
+
+#compraentradas {
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+    color: #000040;
+    text-align: center;
+    display: none;
+}
+
+#formucompra {
+    width: 80%;
+    margin: auto;
+    margin-left: 10%;
+    color: #000040;
+}
+
+input,
+textarea,
+select,
+button,
+label {
+    margin: 10px;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+
+input {
+    width: 50px;
+}
+
+select {
+    width: 100px;
+}
+
+label {
+    width: 250px;
+    clear: left;
+}

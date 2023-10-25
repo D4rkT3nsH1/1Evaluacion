@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="CSS/zinema.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>HERRIKO ANTZOKIA</h1>
+    <h2>CARTELERA PROXIMA SESION</h2>
+  </header>
+  <div id="cartelera">
+    <div class="imagen">
+      <p>SALA 1</p>
+      <a class="eleccionesPelicula"><img class="pelis" alt="" /></a>
+    </div>
+    <div class="imagen">
+      <p>SALA 2</p>
+      <a class="eleccionesPelicula"><img class="pelis" alt="" /></a>
+    </div>
+    <div class="imagen">
+      <p>SALA 3</p>
+      <a class="eleccionesPelicula"><img class="pelis" alt="" /></a>
+    </div>
+    <div class="imagen">
+      <p>SALA 4</p>
+      <a class="eleccionesPelicula"><img class="pelis" alt="" /></a>
+    </div>
+  </div>
+
+  <div id="elementos">
+    <!-- AQUI IRA EL CUADRO CON EL TITULO DE LA PELICULA SELECCIONADA Y SUS SINOPSIS-->
+    <h1 id="tituloPeli"></h1>
+    <h3 id="sinopsisPeli"></h3>
+  </div>
+
+  <div id="compraentradas">
+    <h2 id="salacompra">
+      <p id="butacas"></p>
+    </h2>
+    <div id="formuCompra">
+      <form>
+        <fieldset>
+          <legend>COMPRA DE ENTRADAS PARA LA SESION</legend>
+
+          <label for="numeroEntradas">NUMERO DE ENTRADAS</label>
+          <input id="numeroEntradas" type="text" />
+
+          <label for="tipo">TIPO DE ENTRADA</label>
+          <select name="tipo" id="tipo">
+            <option value="1" selected>Normal</option>
+            <option value="2">Bono descuento</option>
+          </select>
+
+          <label for="precio">PRECIO DE LAS ENTRADAS</label>
+          <input id="precio" type="text" readonly />
+        </fieldset>
+
+        <fieldset>
+          <label for="total">TOTAL A PAGAR</label>
+          <input id="total" type="text" />
+          <button type="submit" id="btnComprar">COMPRAR</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/zinema.js" type="text/javascript"></script>
+</body>
+
+</html>

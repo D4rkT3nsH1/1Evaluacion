@@ -1,0 +1,19 @@
+body{background-color: #CCC49F;
+}
+header h1{width:80%;margin:auto;color:#6190ca;text-align: center; }
+
+header ul{width:50%;margin:auto; list-style-type: none; background-color: #6190ca;  }
+header li{display:inline-block;padding:20px;width:40%;}
+header li a{color:white; text-decoration:none;
+            font-size: 26px;}
+#hitza ,#hitzberria, #juego{display:none; }
+ h2{color:white;background-color:  #6190ca;text-align: center; }
+ #hitza #formuvalidar,#juego #formucomprobar{ border:2px solid white;padding:20px;
+     width:50%;  margin:auto; height:100px; background-color: #6190ca; }
+ #hitza #formuvalidar label,#juego #formucomprobar label {width:150px;
+     color:white; padding:20px;text-decoration: none;border: 0px;
+ }
+ #hitza #formuvalidar input, #juego #formucomprobar input{margin-top: 10px;}
+ .cuadritos{display:inline-block; width:75px;  height:75px; 
+     border:2px solid black;  color:black; background-size: cover; 
+    font-size: 50px; font-weight: bolder;  background-color: white; }

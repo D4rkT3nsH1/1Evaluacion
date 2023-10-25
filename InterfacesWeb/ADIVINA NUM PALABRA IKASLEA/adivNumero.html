@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/estiloNumero.csss">
+</head>
+
+<body>
+    <button id="generarNumero">GENERAR NUMERO</button>
+    <div id="gameArea" style="display: none;">
+        <div id="inputs">
+            <input type="text" id="numeroUsuario" maxlength="2">
+            <button id="comprobar">COMPROBAR</button>
+        </div>
+        <table id="tabla">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="resultadoDiv">
+            <h1 id="resultado"></h1>
+            <button id="volverJugar" style="display: none;">Volver a Jugar</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/adivNumero.js"></script>
+</body>
+
+</html>

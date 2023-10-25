@@ -1,0 +1,36 @@
+
+ #accordion { list-style: none; width: 200px;  }
+ #accordion div { display: block;
+ font-weight: bold; font-size:11px; color:white;
+ cursor: pointer; padding: 5px;
+  background-color: #375d84;
+  border-bottom: 1px solid #eff2f5;
+ }
+ #accordion ul { list-style-type: none;
+        display: none; background: #eff2f5 ;
+        }
+ #accordion ul li { padding: 10px;
+        width: 190px; height: 15px;
+        color: #375d84; display:block; }
+ #accordion ul li:hover {
+        background-color: #d6dfec;
+        margin-left: -40px;
+        width:180px; }
+ #accordion a { text-decoration: none;
+        color: #375d84; }
+nav{width:30%;background-color:  antiquewhite;float:left;}
+section{width:50%;float:left;background-color:  #d6dfec;}
+.estilosection1{
+    height:500px;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    color:red;
+    
+}
+.estilosection2{
+    height:500px;
+    box-sizing: border-box;
+    border: 2px solid gray;
+    color:green;
+    
+}

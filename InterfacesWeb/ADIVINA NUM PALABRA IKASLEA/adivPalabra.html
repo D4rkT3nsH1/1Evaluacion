@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/estiloPalabra.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <h1>ASMATU HITZA </h1>
+        <ul>
+            <li><button id="berria">BERRIA</button></li>
+            <li><button id="asmatu">ASMATU</button></li>
+        </ul>
+
+    </header>
+
+    <div id="hitzberria">
+        <H2>SARTU HITZ BERRIA</H2>
+        <form id="formuhitza" action="#">
+            <label> </label>
+            <input id="idatzih" type="text" placeholder="teclee palabra">
+            <input type="submit" value="enviar">
+        </form>
+    </div>
+
+    <div id="juego">
+        <H2>ASMATU HITZA</H2>
+        <h3>NUMERO INTENTOS <input type="text" id="veces" disabled value="0" /> </h3>
+        <div id="cuadros">
+
+        </div>
+        <div id="encontrarpalabra">
+            <form id="formucomprobar" action="">
+                <label for input> TECLEA LETRA</label>
+                <input type="text" id="letra" maxlength="1" placeholder="letra">
+                <br>
+                <label for input>PALABRA </label><input id="palabraadiv" type="text">
+
+                <br><input type="submit" value="enviar">
+            </form>
+        </div>
+        <p id="aa"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/adivPalabra.js" type="text/javascript"></script>
+</body>
+
+</html>

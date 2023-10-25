@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#gameArea {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#tabla {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#tabla td {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid;
+}
+
+#resultadoDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#resultadoDiv button{
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}
+
+#volverJugar {
+  display: flex;
+  align-items: center;
+}

@@ -5,6 +5,16 @@ class LogVista
 
     //Logina egin aurretik agertuko dena, formulario osoa.
     //Formulario completo con la parte del login.
+
+    public function botonVoler()
+    {
+        ?>
+        <form method="POST" action="Controlador.php">
+            <input type="submit" value="Volver" name="volver">
+        </form>
+        <?php
+    }
+
     public function HasierakoFormularioa()
     {
         ?>
@@ -61,7 +71,8 @@ class LogVista
                     <label><b>¿Qué es lo que quieres hacer?</b></label>
                 </div>
 
-                <input type="radio" value="zerrenda" name="opcion" /> Listado puntuaciones
+                <input type="radio" value="zerrenda" name="opcion" /> Administrar usuarios
+                <input type="radio" value="preguntas" name="opcion" /> Administrar preguntas
                 <input type="radio" value="addUser" name="opcion" /> Añadir usuario
                 <input type="radio" value="addGaldera" name="opcion" /> Añadir pregunta(s)
                 <input type="radio" value="jokatu" name="opcion" /> Jugar
@@ -103,6 +114,43 @@ class LogVista
         <?php
     }
 
+    public function UserData()
+    {
+        ?>
+        <form method="POST" action="Controlador.php">
+            <div>
+                <div>
+                    <label><b>¿De que usuario desearias ver los datos?</b></label>
+                </div>
+                <div>
+                    <label for="userData">Erabiltzailea</label>
+                    <input type="text" name="userData" />
+                </div>
+                <br>
+                <input type="submit" value="Datos del usuario" name="user_data" />
+            </div>
+        </form>
+        <?php
+    }
+    public function UserDataByGalderaId()
+    {
+        ?>
+        <form method="POST" action="Controlador.php">
+            <div>
+                <div>
+                    <label><b>¿De que pregunta desearias ver los datos?</b></label>
+                </div>
+                <div>
+                    <label for="galderaID">GalderaId</label>
+                    <input type="number" min="1" name="galderaID" />
+                </div>
+                <br>
+                <input type="submit" value="Buscar" name="galdera_id_btn" />
+            </div>
+        </form>
+        <?php
+    }
+
     public function addGaldera()
     {
         ?>
@@ -137,7 +185,6 @@ class LogVista
 
     public function zerrendatu($zerrenda_asoziatiboa)
     {
-
         ?>
         <table border="1">
             <tr>
@@ -153,6 +200,74 @@ class LogVista
                     </td>
                     <td>
                         <?php echo ($puntuazioa); ?>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+        </table>
+        <?php
+    }
+
+    public function zerrendatuGalderaData($zerrenda_asoziatiboa)
+    {
+
+        ?>
+        <h2>Preguntas relacionadas con la búsqueda</h2>
+        <table border="1">
+            <tr>
+                <th>Erabiltzailea</th>
+                <th>Partida eguna-ordua</th>
+                <th>GalderaId</th>
+                <th>Ondo/Txarto</th>
+            </tr>
+            <?php
+            foreach ($zerrenda_asoziatiboa as $data) {
+                ?>
+                <tr>
+                    <td>
+                        <?php echo ($data[0]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($data[1]); ?>
+                    </td>
+                    <td>
+                        <?php echo ($data[2]); ?>
+                    </td>
+                    <td>
+                        <?php if ($data[3] == 1) {
+                            echo "Ondo";
+                        } else {
+                            echo "Txarto";
+                        } ?>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+        </table>
+        <?php
+
+    }
+
+    public function zerrendatuGalderak($zerrenda_asoziatiboa)
+    {
+
+        ?>
+        <table border="1">
+            <tr>
+                <th>Id Galdera</th>
+                <th>Galdera</th>
+            </tr>
+            <?php
+            foreach ($zerrenda_asoziatiboa as $galdera => $data) {
+                ?>
+                <tr>
+                    <td>
+                        <?php echo ($galdera); ?>
+                    </td>
+                    <td>
+                        <?php echo ($data); ?>
                     </td>
                 </tr>
                 <?php

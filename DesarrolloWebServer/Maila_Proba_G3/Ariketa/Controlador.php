@@ -6,7 +6,7 @@ include_once "Vista.php";
 include_once "Modelo.php";
 
 $LoginVista = new LogVista;
-$Modelo = new Jokalari_Modeloa;
+$Modelo = new Modelo;
 
 $Modelo->konektatu();
 
@@ -26,24 +26,44 @@ if (isset($_POST["botoia"]) && !$_SESSION["balioztatua"]) {
     }
 }
 
+if (!$_SESSION["isAdmin"] && isset($_POST["volver"])) {
+    $LoginVista->Aukera_Eman();
+} else if ($_SESSION["isAdmin"] && isset($_POST["volver"])) {
+    $_SESSION["desdeZerrenda"] = false;
+    $_SESSION["desdePreguntas"] = false;
+    $LoginVista->Aukera_Eman_Admin();
+}
+
 if ($_SESSION["balioztatua"] && isset($_POST["botoia"])) {
     if (isset($_POST["opcion"]) && $_SESSION["isAdmin"]) {
         switch ($_POST["opcion"]) {
             case "zerrenda":
                 $LoginVista->Aukera_Eman_Admin();
+                $LoginVista->UserData();
                 $LoginVista->zerrendatu($Modelo->zerrenda_ordenatuta());
+                $LoginVista->botonVoler();
+                break;
+
+            case "preguntas":
+                $_SESSION["desdePreguntas"] = TRUE;
+                $LoginVista->zerrendatuGalderak($Modelo->getGalderakID());
+                $LoginVista->UserDataByGalderaId();
+                $LoginVista->botonVoler();
                 break;
 
             case "addUser":
                 $LoginVista->addUser();
+                $LoginVista->botonVoler();
                 break;
 
             case "addGaldera":
                 $LoginVista->addGaldera();
+                $LoginVista->botonVoler();
                 break;
 
             case "jokatu":
                 $LoginVista->galdera_erantzunak_marraztu($Modelo->galderak_eskatu());
+                $LoginVista->botonVoler();
                 break;
 
 
@@ -53,9 +73,11 @@ if ($_SESSION["balioztatua"] && isset($_POST["botoia"])) {
             case "zerrenda":
                 $LoginVista->Aukera_Eman();
                 $LoginVista->zerrendatu($Modelo->zerrenda_ordenatuta());
+                $LoginVista->botonVoler();
                 break;
             case "jokatu":
                 $LoginVista->galdera_erantzunak_marraztu($Modelo->galderak_eskatu());
+                $LoginVista->botonVoler();
                 break;
         }
     } else {
@@ -63,6 +85,61 @@ if ($_SESSION["balioztatua"] && isset($_POST["botoia"])) {
             <h3 style="color: red;">Ez duzu zehaztu zer den egin nahi duzuna/ No has elegido qué quieres hacer. </h3>
             <?php
             $LoginVista->Aukera_Eman();
+    }
+}
+
+if ($_SESSION["isAdmin"] && isset($_POST["user_data"])) {
+    $_SESSION["desdeZerrenda"] = TRUE;
+    if ($_POST["userData"] != "") {
+        $user = $_POST["userData"];
+        $_SESSION["userTemp"] = $user;
+        $userExiste = $Modelo->getUserData($user);
+        if ($userExiste) {
+            $LoginVista->zerrendatuGalderak($Modelo->getGalderakID());
+            $LoginVista->UserDataByGalderaId();
+            $LoginVista->zerrendatuGalderaData($userExiste);
+            $LoginVista->botonVoler();
+        } else {
+            ?>
+            <h3 style="color: red;">El usuario no existe</h3>
+            <?php
+            $LoginVista->Aukera_Eman_Admin();
+        }
+    }
+}
+
+if ($_SESSION["isAdmin"] && $_SESSION["desdePreguntas"] && isset($_POST["galdera_id_btn"])) {
+    $_SESSION["desdePreguntas"] = false;
+    if ($_POST["galderaID"] != "") {
+        $galderaId = $_POST["galderaID"];
+        if ($Modelo->comprobarPreguntaId($galderaId)) {
+            $LoginVista->zerrendatuGalderaData($Modelo->getPreguntasById($galderaId));
+            $LoginVista->botonVoler();
+        } else {
+            ?>
+            <h3 style="color: red;">La id de esa pregunta no existe</h3>
+            <?php
+            $LoginVista->Aukera_Eman_Admin();
+        }
+    }
+}
+
+if ($_SESSION["isAdmin"] && $_SESSION["desdeZerrenda"] && isset($_POST["galdera_id_btn"])) {
+    $_SESSION["desdeZerrenda"] = false;
+    if ($_POST["galderaID"] != "") {
+        $user = $_SESSION["userTemp"];
+        $_SESSION["userTemp"] = null;
+        $galderaId = $_POST["galderaID"];
+        $userPorIdGaldera = $Modelo->getUserDataAndGid($user, $galderaId);
+        if ($userPorIdGaldera) {
+            $LoginVista->zerrendatuGalderaData($userPorIdGaldera);
+            $LoginVista->botonVoler();
+        } else {
+            ?>
+            <h3 style="color: red;">La id de esa pregunta no existe</h3>
+            <?php
+            $LoginVista->Aukera_Eman_Admin();
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-class Jokalari_Modeloa
+class Modelo
 {
 
     private $mysqli;
@@ -82,6 +82,22 @@ class Jokalari_Modeloa
         return $galderaZerrenda;
     }
 
+    public function getGalderakID()
+    {
+        $sql = "SELECT * FROM galderakTaula";
+        $emaitza = $this->mysqli->query($sql);
+
+        $galderaZerrenda = array();
+
+        foreach ($emaitza as $lerroa) {
+            $galderaId = $lerroa['galderaId'];
+            $galdera = $lerroa['galdera'];
+            $galderaZerrenda[$galderaId] = $galdera;
+        }
+
+        return $galderaZerrenda;
+    }
+
     public function erantzunak_eskatu()
     {
         $sql = "SELECT * FROM galderakTaula";
@@ -142,7 +158,7 @@ class Jokalari_Modeloa
         }
     }
 
-    public function comprobarUsuario($user, $pass)
+    public function comprobarUsuario($user)
     {
         $sql = "SELECT * FROM jokalariak WHERE erabiltzailea = '$user'";
         $result = $this->mysqli->query($sql);
@@ -153,9 +169,20 @@ class Jokalari_Modeloa
             return true;
         }
     }
+    public function comprobarPreguntaId($galderaId)
+    {
+        $sql = "SELECT * FROM partidataula WHERE galderaId = $galderaId";
+        $result = $this->mysqli->query($sql);
+
+        if ($result->num_rows >= 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function AddUser($user, $pass, $isAdmin)
     {
-        $noExiste = $this->comprobarUsuario($user, $pass);
+        $noExiste = $this->comprobarUsuario($user);
         if ($noExiste) {
             try {
                 $sql = "INSERT INTO jokalariak (erabiltzailea, pasahitza, isAdmin) VALUES ('$user', '$pass', $isAdmin)";
@@ -167,6 +194,87 @@ class Jokalari_Modeloa
         } else {
             return false;
         }
+    }
 
+    public function getUserData($user)
+    {
+        $noExiste = $this->comprobarUsuario($user);
+        if (!$noExiste) {
+            $sql = "SELECT * FROM partidataula WHERE erabiltzailea = '$user'";
+            $resultado = $this->mysqli->query($sql);
+            $partidaZerrenda = array();
+            $kont = 1;
+
+            foreach ($resultado as $lerroa) {
+
+                $erabiltzailea = $lerroa['erabiltzailea'];
+                $partidaOrdua = $lerroa['partidaOrdua'];
+                $galderaId = $lerroa['galderaId'];
+                $galderaZuzena = $lerroa['galderaZuzena'];
+                $partidaZerrenda[$kont] = array($erabiltzailea, $partidaOrdua, $galderaId, $galderaZuzena);
+                $kont++;
+            }
+            return $partidaZerrenda;
+        } else {
+            return false;
+        }
+    }
+
+    public function getUserDataAndGid($user, $galderaId)
+    {
+        $noExiste = $this->comprobarUsuario($user);
+        if (!$noExiste) {
+            $sql = "SELECT * FROM partidataula WHERE erabiltzailea = '$user' AND galderaId = $galderaId";
+            $resultado = $this->mysqli->query($sql);
+            $partidaZerrenda = array();
+            $kont = 1;
+
+            foreach ($resultado as $lerroa) {
+                $erabiltzailea = $lerroa['erabiltzailea'];
+                $partidaOrdua = $lerroa['partidaOrdua'];
+                $galderaId = $lerroa['galderaId'];
+                $galderaZuzena = $lerroa['galderaZuzena'];
+                $partidaZerrenda[$kont] = array($erabiltzailea, $partidaOrdua, $galderaId, $galderaZuzena);
+                $kont++;
+            }
+            return $partidaZerrenda;
+        } else {
+            return false;
+        }
+    }
+    public function getPreguntas()
+    {
+        $sql = "SELECT * FROM partidataula";
+        $resultado = $this->mysqli->query($sql);
+        $partidaZerrenda = array();
+        $kont = 1;
+
+        foreach ($resultado as $lerroa) {
+            $erabiltzailea = $lerroa['erabiltzailea'];
+            $partidaOrdua = $lerroa['partidaOrdua'];
+            $galderaId = $lerroa['galderaId'];
+            $galderaZuzena = $lerroa['galderaZuzena'];
+            $partidaZerrenda[$kont] = array($erabiltzailea, $partidaOrdua, $galderaId, $galderaZuzena);
+            $kont++;
+        }
+        return $partidaZerrenda;
+    }
+
+    public function getPreguntasById($galderaId)
+    {
+        $sql = "SELECT * FROM partidataula WHERE galderaId = $galderaId";
+        $resultado = $this->mysqli->query($sql);
+        $partidaZerrenda = array();
+        $kont = 1;
+
+        foreach ($resultado as $lerroa) {
+            $erabiltzailea = $lerroa['erabiltzailea'];
+            $partidaOrdua = $lerroa['partidaOrdua'];
+            $galderaId = $lerroa['galderaId'];
+            $galderaZuzena = $lerroa['galderaZuzena'];
+            $partidaZerrenda[$kont] = array($erabiltzailea, $partidaOrdua, $galderaId, $galderaZuzena);
+            $kont++;
+        }
+        return $partidaZerrenda;
     }
 }

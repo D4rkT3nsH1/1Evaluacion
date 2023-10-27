@@ -66,27 +66,37 @@ if ($_SESSION["balioztatua"] && isset($_POST["botoia"])) {
     }
 }
 
-if ($_SESSION["isAdmin"] && isset($_POST["botoia_user"])) {
-    if (isset($_POST["pregunta"]) != "" && isset($_POST["respuestas"]) != "" && isset($_POST["respuestaBuena"]) != "" && isset($_POST["puntuazioa"]) != "") {
+if ($_SESSION["isAdmin"] && isset($_POST["botoia_galdera"])) {
+    if ($_POST["pregunta"] != "" && $_POST["respuestas"] != "" && $_POST["respuestaBuena"] != "" && $_POST["puntuacion"] != "") {
         $galdera = $_POST["pregunta"];
         $respuestas = $_POST["respuestas"];
         $respuestaBuena = $_POST["respuestaBuena"];
-        $puntuazioa = $_POST["puntacion"];
+        $puntuazioa = $_POST["puntuacion"];
 
         $Modelo->AddGaldera($galdera, $respuestas, $respuestaBuena, $puntuazioa);
         $LoginVista->Aukera_Eman_Admin();
+    } else {
+        ?>
+        <h3 style="color: red;">Has dejado algún campo vacio o ha habido un error</h3>
+        <?php
+        $LoginVista->Aukera_Eman_Admin();
     }
-    ?>
-    <h3 style="color: red;">Has dejado algún campo vacio</h3>
-    <?php
-    $LoginVista->Aukera_Eman_Admin();
 }
 
-if ($_SESSION["isAdmin"] && isset($_POST["botoia_galdera"])) {
+if ($_SESSION["isAdmin"] && isset($_POST["botoia_user"])) {
+    if ($_POST["user"] != "" && $_POST["pass"] != "" && $_POST["isAdmin"] != "") {
+        $user = $_POST["user"];
+        $pass = $_POST["pass"];
+        $isAdmin = $_POST["isAdmin"];
 
-
-
-    $LoginVista->Aukera_Eman_Admin();
+        $Modelo->AddUser($user, $pass, $isAdmin);
+        $LoginVista->Aukera_Eman_Admin();
+    } else {
+        ?>
+        <h3 style="color: red;">Has dejado algún campo vacio o ha habido un error</h3>
+        <?php
+        $LoginVista->Aukera_Eman_Admin();
+    }
 }
 
 

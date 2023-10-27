@@ -89,6 +89,13 @@ class LogVista
                     <label for="pass">Pasahitza</label>
                     <input type="password" name="pass" />
                 </div>
+                <div>
+                    <label for="isAdmin">Admin da?</label>
+                    <select name="isAdmin" id="adminSelect">
+                        <option value="1">Si</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
                 <br>
                 <input type="submit" value="Añadir usuario" name="botoia_user" />
             </div>
@@ -122,7 +129,7 @@ class LogVista
                 </div>
                 <br>
                 <br>
-                <input type="submit" value="Añadir pregunta" name="botoia_galera" />
+                <input type="submit" value="Añadir pregunta" name="botoia_galdera" />
             </div>
         </form>
         <?php

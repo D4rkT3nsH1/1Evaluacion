@@ -136,7 +136,17 @@ class Jokalari_Modeloa
     public function AddGaldera($galdera, $erantzuna, $erantzunOna, $puntuazioa)
     {
         try {
-            $sql = "INSERT INTO 'galderaktaula'('galdera', 'erantzunPosibleak', 'erantzunOna', 'galderarenBalioa') VALUES ('$galdera', '$erantzuna', '$erantzunOna', '$puntuazioa');";
+            $sql = "INSERT INTO galderaktaula (galdera, erantzunPosibleak, erantzunOna, galderarenBalioa) VALUES ('$galdera', '$erantzuna', '$erantzunOna', $puntuazioa);";
+            $this->mysqli->query($sql);
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    public function AddUser($user, $pass, $isAdmin)
+    {
+        try {
+            $sql = "INSERT INTO jokalariak (erabiltzailea, pasahitza, isAdmin) VALUES ('$user', '$pass', $isAdmin)";
             $this->mysqli->query($sql);
         } catch (Exception $ex) {
             throw $ex;

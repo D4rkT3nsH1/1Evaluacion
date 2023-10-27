@@ -5,7 +5,6 @@ class Jokalari_Modeloa
 
     private $mysqli;
 
-    //Konektatzeko funtzio/ Función para realizar la conexión.
     public function konektatu()
     {
         try {
@@ -19,32 +18,44 @@ class Jokalari_Modeloa
         }
     }
 
-    //Logina egiaztatzeko funtzioa./ Función para comprobar el login.
     public function balioztatzea($user, $pass)
     {
-        $sql = "SELECT * FROM jokalariak WHERE erabiltzailea = '" . $user . "' and pasahitza = '" . $pass . "'";
-        $this->mysqli->query($sql);
-        if ($this->mysqli->affected_rows == 1) {
-            return TRUE;
+        $sql = "SELECT * FROM jokalariak WHERE erabiltzailea = '$user' AND pasahitza = '$pass'";
+        $result = $this->mysqli->query($sql);
+
+        if ($result === false) {
+            return -1;
+        }
+
+        if ($result->num_rows == 1) {
+            $sql2 = "SELECT * FROM jokalariak WHERE erabiltzailea = '$user' AND pasahitza = '$pass' AND isAdmin = 1";
+            $result2 = $this->mysqli->query($sql2);
+
+            if ($result2 === false) {
+                return -1;
+            }
+
+            if ($result2->num_rows == 1) {
+                return 1; //Admin
+            } else {
+                return 2; //Usuario Normal
+            }
         } else {
-            return FALSE;
+            return 3;
         }
     }
 
 
-    // Puntuazioa eguneratuko da DBan. Se actualizará la puntuación en DB
     public function eguneratu_puntuazioa($user, $punt)
     {
         $sql = "UPDATE jokalariak SET puntuazio_max = puntuazio_max + " . $punt . "  WHERE erabiltzailea = '" . $user . "'";
         $this->mysqli->query($sql);
     }
 
-    // Puntuazioaren arabera ordenatutako erabiltzaile zerrenda asoziatiboa itzuliko du.
-    // Devolverá la lista asociativa de usuarios ordenada por puntuación.
     public function zerrenda_ordenatuta()
     {
         try {
-            $sql = "SELECT erabiltzailea, puntuazio_max FROM jokalariak ORDER BY puntuazio_max DESC;";
+            $sql = "SELECT erabiltzailea, puntuazio_max FROM jokalariak WHERE isAdmin != 1 ORDER BY puntuazio_max DESC;";
             $emaitza = $this->mysqli->query($sql);
             foreach ($emaitza as $lerroa) {
                 $zerrenda[$lerroa['erabiltzailea']] = $lerroa['puntuazio_max'];
@@ -94,7 +105,7 @@ class Jokalari_Modeloa
         $kont = 0;
         foreach ($emaitzenArraya as $galdera => $erantzuna) {
             if ($_POST['galdera' . $kont++] == $erantzuna[0]) {
-                echo ($galdera . " galderaren erantzuna " . $erantzuna[0] . " da. Beraz zuzena da [". $erantzuna[1] ." Puntu]. <br><br>");
+                echo ($galdera . " galderaren erantzuna " . $erantzuna[0] . " da. Beraz zuzena da [" . $erantzuna[1] . " Puntu]. <br><br>");
                 $puntuak += $erantzuna[1];
 
                 $galderaID = $this->eskatuGalderaID($galdera);
@@ -119,6 +130,16 @@ class Jokalari_Modeloa
             if ($row) {
                 return $row['galderaId'];
             }
+        }
+    }
+
+    public function AddGaldera($galdera, $erantzuna, $erantzunOna, $puntuazioa)
+    {
+        try {
+            $sql = "INSERT INTO 'galderaktaula'('galdera', 'erantzunPosibleak', 'erantzunOna', 'galderarenBalioa') VALUES ('$galdera', '$erantzuna', '$erantzunOna', '$puntuazioa');";
+            $this->mysqli->query($sql);
+        } catch (Exception $ex) {
+            throw $ex;
         }
     }
 }

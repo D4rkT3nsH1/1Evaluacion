@@ -88,9 +88,18 @@ if ($_SESSION["isAdmin"] && isset($_POST["botoia_user"])) {
         $user = $_POST["user"];
         $pass = $_POST["pass"];
         $isAdmin = $_POST["isAdmin"];
-
-        $Modelo->AddUser($user, $pass, $isAdmin);
-        $LoginVista->Aukera_Eman_Admin();
+        $userNuevo = $Modelo->AddUser($user, $pass, $isAdmin);
+        if ($userNuevo) {
+            ?>
+            <h3 style="color: green;">Usuario añadido con éxito.</h3>
+            <?php
+            $LoginVista->Aukera_Eman_Admin();
+        } else {
+            ?>
+            <h3 style="color: red;">El usuario ya existe</h3>
+            <?php
+            $LoginVista->addUser();
+        }
     } else {
         ?>
         <h3 style="color: red;">Has dejado algún campo vacio o ha habido un error</h3>

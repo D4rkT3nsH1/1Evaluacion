@@ -45,7 +45,6 @@ class Jokalari_Modeloa
         }
     }
 
-
     public function eguneratu_puntuazioa($user, $punt)
     {
         $sql = "UPDATE jokalariak SET puntuazio_max = puntuazio_max + " . $punt . "  WHERE erabiltzailea = '" . $user . "'";
@@ -143,13 +142,31 @@ class Jokalari_Modeloa
         }
     }
 
+    public function comprobarUsuario($user, $pass)
+    {
+        $sql = "SELECT * FROM jokalariak WHERE erabiltzailea = '$user'";
+        $result = $this->mysqli->query($sql);
+
+        if ($result->num_rows == 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public function AddUser($user, $pass, $isAdmin)
     {
-        try {
-            $sql = "INSERT INTO jokalariak (erabiltzailea, pasahitza, isAdmin) VALUES ('$user', '$pass', $isAdmin)";
-            $this->mysqli->query($sql);
-        } catch (Exception $ex) {
-            throw $ex;
+        $noExiste = $this->comprobarUsuario($user, $pass);
+        if ($noExiste) {
+            try {
+                $sql = "INSERT INTO jokalariak (erabiltzailea, pasahitza, isAdmin) VALUES ('$user', '$pass', $isAdmin)";
+                $this->mysqli->query($sql);
+                return true;
+            } catch (Exception $ex) {
+                throw $ex;
+            }
+        } else {
+            return false;
         }
+
     }
 }

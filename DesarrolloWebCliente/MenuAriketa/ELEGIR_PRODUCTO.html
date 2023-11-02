@@ -1,0 +1,71 @@
+<html id="elegirProd">
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/CSS.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="IMG/izena.png" alt="" />
+        </div>
+        <nav>
+            <span id="titulo">TIPOS DE MENU:</span>
+            <select id="comboMenus">
+                <option value="elegir">Elige un tipo</option>
+                <option value="basico">MENÚ BÁSICO</option>
+                <option value="especial">MENÚ ESPECIAL</option>
+            </select>
+            <a href="#" id="elemCompra">COMPRAR</a>
+            <a href="#" id="elemVolver">VOLVER</a>
+        </nav>
+    </header>
+    <h2 class="platosMenu">PRIMEROS PLATOS</h2>
+    <section id="PrimerosPlatos">
+    </section>
+
+    <h2 class="platosMenu">SEGUNDOS PLATOS</h2>
+    <section id="SegundosPlatos">
+    </section>
+
+    <h2 class="platosMenu">POSTRES</h2>
+    <section id="PostresPlatos">
+    </section>
+
+    <section id="Pedido">
+        <div id="fade" class="overlay"></div>
+        <div id="light" class="modal">
+            <div class="modalElem">
+                <h2>DATOS DE ENTREGA</h2>
+                <form id="formPedido" name="formPedido">
+                    <label for="nombre">NOMBRE </label><input type="text" name="nombre" id="nombre"
+                        placeholder="Nombre">
+                    <label for="edad"> EDAD </label><input type="text" name="edad" id="edad">
+                    <label for="direccion">DIRECCION </label> <input type="text" name="direccion" id="direccion"
+                        placeholder="Direccion" disabled>
+
+                </form>
+                <button id="btnComprar">COMPRAR</button>
+                <button id="btnCancelar">CANCELAR</button>
+            </div>
+            <div class="modalElem">
+                <h2>PEDIDO REALIZADO</h2>
+                <div id="hemenJarri">
+                    <ul id="listaPlatosSeleccionados"></ul>
+                </div>
+                <div id="precioTotal"></div>
+                <div id="descuento"></div>
+                <div id="precioTotalPostDescuento"></div>
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/jquery-3.6.0.js"></script>
+    <script src="JS/modal.js" type="text/javascript"></script>
+</body>
+
+</html>

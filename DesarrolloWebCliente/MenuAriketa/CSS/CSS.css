@@ -1,0 +1,293 @@
+header div:nth-child(2) img {
+    width: 100%;
+    height: 30%;
+}
+
+header div:nth-child(1) img {
+    width: 30%;
+    height: 10%;
+}
+
+nav {
+    background: #FF8800;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+nav a {
+    color: black;
+    background: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+nav span {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+nav select {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+section .card {
+    border: 1px solid silver;
+    margin: 15px;
+    background-color: #ffecd6;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+section .card img {
+    width: 100%;
+}
+
+section .card span {
+    font-size: 18px
+}
+
+section .card button {
+    font-weight: bolder;
+    background: #FF8800;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+section .platosMenu {
+    margin: 4px;
+}
+
+#elegirProd section .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*
+#elegirProd section .card {
+    display: none;
+}
+*/
+
+#pagIndex section .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#pagIndex section .card button {
+    width: 50%;
+    align-self: center;
+
+}
+
+/*codigo del modal*/
+
+#pedido{
+    display: none;
+}
+
+.overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1001;
+    opacity: .75;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+    /*     overflow-y: hidden;*/
+}
+
+.modal {
+
+    position: fixed;
+    top: 15%;
+    left: 12%;
+    width: 70%;
+    height: 60%;
+    padding: 16px;
+    background: #fff;
+    color: #333;
+    z-index: 1002;
+    overflow: auto;
+    /*    overflow: auto;*/
+}
+
+#light {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal .modalElem {
+    width: 50%;
+    padding: 10px;
+}
+
+.modal .modalElem li span {
+    width: 200px;
+    display: inline-flex;
+}
+
+.modal #formPedido input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#formPedido button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+#formPedido button:hover,
+.form button:active,
+.form button:focus {
+    background: #43A047;
+}
+
+::-webkit-input-placeholder {
+    color: #adadad;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #adadad;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #adadad;
+}
+
+:-ms-input-placeholder {
+    color: #adadad;
+}
+
+
+
+/*poner mediaquery a menu sup*/
+@media (max-width: 716px) {
+    #light {
+        flex-direction: column;
+    }
+
+    .modal {
+        position: absolute;
+
+        height: 100%;
+    }
+
+    .modal .modalElem {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    #pagIndex section,
+    #elegirProd section {
+        flex-wrap: wrap;
+    }
+
+    #elegirProd section .card {
+        width: 90%;
+    }
+
+    #elegirProd nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #elegirProd nav a {
+        margin-top: 5px;
+    }
+
+    #elegirProd nav select {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    #pagIndex header div:nth-child(2) img {
+        display: none;
+    }
+
+    #pagIndex header nav {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #pagIndex header nav a {
+        width: 50%;
+        margin: 5px;
+
+    }
+}
+
+@media (min-width:451px) and (max-width: 675px) {
+    #elegirProd section {
+        flex-wrap: wrap;
+    }
+
+    #elegirProd section .card {
+        width: 40%;
+    }
+
+    #elegirProd nav select {
+        padding-top: 3px;
+        padding-bottom: 2px;
+    }
+}
+
+@media (min-width:451px) and (max-width: 775px) {
+    #pagIndex section {
+        flex-wrap: wrap;
+    }
+
+    #pagIndex section .card {
+        width: 40%;
+    }
+
+    #pagIndex nav select {
+        padding-top: 3px;
+        padding-bottom: 2px;
+    }
+}

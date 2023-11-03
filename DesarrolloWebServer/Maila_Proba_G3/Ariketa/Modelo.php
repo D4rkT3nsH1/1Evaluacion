@@ -277,4 +277,33 @@ class Modelo
         }
         return $partidaZerrenda;
     }
+
+    public function getCantRespuestasBien($user, $galderaId)
+    {
+        $sql = "SELECT COUNT(*) as count FROM partidataula WHERE erabiltzailea = '$user' AND galderaId = $galderaId AND galderaZuzena = 1";
+        $resultado = $this->mysqli->query($sql);
+
+        if ($resultado) {
+            $row = $resultado->fetch_assoc();
+            $cantidad = $row['count'];
+            return $cantidad;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public function getCantRespuestasMal($user, $galderaId)
+    {
+        $sql = "SELECT COUNT(*) as count FROM partidataula WHERE erabiltzailea = '$user' AND galderaId = $galderaId AND galderaZuzena = 0";
+        $resultado = $this->mysqli->query($sql);
+        if ($resultado) {
+            $row = $resultado->fetch_assoc();
+            $cantidad = $row['count'];
+            return $cantidad;
+        } else {
+            return 0;
+        }
+    }
+
 }

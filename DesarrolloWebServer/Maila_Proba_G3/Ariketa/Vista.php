@@ -71,8 +71,7 @@ class LogVista
                     <label><b>¿Qué es lo que quieres hacer?</b></label>
                 </div>
 
-                <input type="radio" value="zerrenda" name="opcion" /> Administrar usuarios
-                <input type="radio" value="preguntas" name="opcion" /> Administrar preguntas
+                <input type="radio" value="zerrenda" name="opcion" /> Administrar usuarios/preguntas
                 <input type="radio" value="addUser" name="opcion" /> Añadir usuario
                 <input type="radio" value="addGaldera" name="opcion" /> Añadir pregunta(s)
                 <input type="radio" value="jokatu" name="opcion" /> Jugar
@@ -217,7 +216,7 @@ class LogVista
         <table border="1">
             <tr>
                 <th>Erabiltzailea</th>
-                <th>Partida eguna-ordua</th>
+                <th>Partida eguna</th>
                 <th>GalderaId</th>
                 <th>Ondo/Txarto</th>
             </tr>
@@ -229,7 +228,7 @@ class LogVista
                         <?php echo ($data[0]); ?>
                     </td>
                     <td>
-                        <?php echo ($data[1]); ?>
+                        <?php echo date('Y-m-d', strtotime($data[1])); ?>
                     </td>
                     <td>
                         <?php echo ($data[2]); ?>
@@ -245,6 +244,28 @@ class LogVista
                 <?php
             }
             ?>
+        </table>
+        <?php
+
+    }
+
+    public function enseñarCantRespondido($bienCount, $malCount)
+    {
+        ?>
+        <table border="1">
+            <tr>
+                <td>Cantidad de respuestas bien efectuadas</td>
+                <td style="color: green;">
+                    <?php echo $bienCount ?>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cantidad de respuestas mal efectuadas</td>
+                <td style="color: red;">
+                    <?php echo $malCount ?>
+                </td>
+            </tr>
         </table>
         <?php
 

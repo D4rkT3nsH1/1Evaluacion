@@ -7,13 +7,6 @@ $(document).ready(function () {
         $('#comboMenus').hide();
     }
 
-    function actualizarPrecioTotal() {
-        precioTotal = 0;
-        for (var i = 0; i < platosSeleccionados.length; i++) {
-            precioTotal += platosSeleccionados[i].precio;
-        }
-        $("#precioTotal").text("Precio Total: " + precioTotal + "€");
-    }
 
     function mostrarPlatosSeleccionados() {
         var listaPlatos = $("#listaPlatosSeleccionados");
@@ -23,6 +16,14 @@ $(document).ready(function () {
             var listItem = $("<li>").text(platosSeleccionados[i].titulo + " ===> Precio: " + platosSeleccionados[i].precio + "€");
             listaPlatos.append(listItem);
         }
+    }
+
+    function actualizarPrecioTotal() {
+        precioTotal = 0;
+        for (var i = 0; i < platosSeleccionados.length; i++) {
+            precioTotal += platosSeleccionados[i].precio;
+        }
+        $("#precioTotal").text("Precio Total: " + precioTotal + "€");
     }
 
     function aplicarDescuento() {
@@ -73,7 +74,6 @@ $(document).ready(function () {
             alert("Debes seleccionar al menos un plato.");
             return;
         }
-
         $("#Pedido").fadeIn(400);
     });
 

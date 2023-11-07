@@ -1,0 +1,132 @@
+/*html{ background: #eceded;
+background-image:url("../IRUDIAK/logoviajes.png");
+background-size: cover;
+background-repeat: no-repeat;
+opacity: 0.5;
+height: 100vh;}*/
+
+header p {
+    width: 50%;
+    margin: auto;
+    background-size: cover;
+}
+
+header p img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+}
+
+/*menu continentes*/
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #CCC;
+}
+
+button {
+    margin: 10px;
+    border: 0px;
+    padding: 15px;
+    background-color: #8EC3BB;
+    font-weight: bold;
+
+    ;
+}
+
+header>nav {
+    background-color: #8EC3BB;
+
+    padding: 10px;
+    justify-content: space-around;
+}
+
+header>nav>select {
+    width: 20%;
+    height: 20px;
+
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    padding: 15px;
+}
+
+nav a:hover {
+    background: #555;
+    color: #CCC;
+}
+
+/*fin menu continentes*/
+/*tarjetas en columnas*/
+
+#divSeccion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 35px;
+    background-color: white;
+    opacity: 1 !important;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 35px;
+}
+
+section .tarjeta {
+    margin: 2px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+section .tarjeta img {
+    width: 100%;
+    height: auto;
+}
+
+/*fin tarjetas en columnas*/
+
+/*zpna mediaquery*/
+@media screen and (max-width: 500px) {
+
+    section {
+        display: block;
+    }
+
+    header>nav {
+        align-content: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    section {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    ;
+
+}
+
+@media screen and (min-width: 780px) {
+    section {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    ;
+
+}
+
+@media screen and (min-width: 920px) {
+    section {
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+    ;
+
+}

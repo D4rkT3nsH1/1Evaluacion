@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/BIDAIAK2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div id="contenedor">
+        <header id="header">
+            <nav id="navHeader">
+                <select id="selectContinent">
+                    <option>AFRICA</option>
+                    <option>AMERICA</option>
+                    <option>ASIA</option>
+                    <option>EUROPA</option>
+                    <option>OCEANIA</option>
+                </select>
+                <select id="selectTravel">
+
+                </select>
+            </nav>
+        </header>
+
+        <div id="divSeccion">
+            <!--  <div class="irudia">
+                    <h3>Machu Picchu Peru</h3>
+                    <img src="IRUDIAK/machu picchu.jpg">
+                </div> 
+                <div class="texto">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac bibendum purus. Cras gravida, nisl at egestas pharetra, sapien sapien varius tellus, imperdiet laoreet urna ante ac elit. Nullam ac libero non ante luctus egestas id a erat. Fusce id diam in ante blandit porttitor et sit amet dolor  
+                    </p>
+                </div>-->
+        </div>
+    </div>
+    <div id="divCompra">
+        <h3>Make your reservation </h3>
+        <div id="divForm">
+            <form action="#" enctype="multipart/form-data" method="get" name="formulario1" autocomplete="off">
+                <p>
+                    <label>Date of departure </label> <input type="text" name="fecha" id="dateDeparture" disabled>
+                    </br> <label id="temporada"> High season</label>
+                </p>
+                <p>
+                    <label>Number of people (maximun of seven)</label> <br>
+
+                    <!--<input type="text" name="numPersonas" id="numPersonas" class="cajas"></br>-->
+                </p>
+                <p>
+                <fieldset id="contenidoForm">
+                    <legend>Age</legend>
+                    <label class="labelCajas" for="menoresFree">children(less than 6)FREE </label>
+                    <input type="text" maxlength="1" name="menoresFree" id="menoresFree" class="cajas" value="0"></br>
+
+                    <label class="labelCajas" for="de7a18">children(0 to 18)</label>
+                    <input type="text" name="de7a18" id="menores" class="cajas" value="0"></br>
+
+                    <label class="labelCajas" for="de18a65">18 to 65</label>
+                    <input type="text" name="de18a65" id="de18a65" class="cajas" value="0">
+                    </br>
+                    <label class="labelCajas" for="masde65">More than 65</label>
+                    <input type="text" name="masde65" id="masde65" class="cajas" value="0"></br>
+
+                </fieldset>
+
+                <p> <input type="button" value="Details " name="submit" id="btnSubmit" class="btn"></p>
+
+
+            </form>
+            <div id="divReserva">
+                <form action="#" enctype="multipart/form-data" method="post" name="formulario2" id="formulario2"
+                    autocomplete="off">
+                    <p>
+                        <label>Price /person : </label> <input type="text" name="price" id="priceReser" disabled>
+                        </br>
+                        <label for="numPersonas">Number of people( maximun of six)</label>
+
+                    </p>
+                    <p>
+                        <label class="labelCajas" for="menores6">children (-6)</label>
+                        <input type="text" name="menor6" id="menorFreeReserva" class="cajasRes" disabled>
+                        <input type="text" name="menor6" id="menorFreePrice" class="cajasRes" disabled>
+                        <input type="text" name="meno6" id="menorFreeTot" class="cajasRes" disabled></br>
+
+                        <label class="labelCajas" for="de7a18">Children (0-18)</label>
+                        <input type="text" name="7to18" id="menoresReserva" class="cajasRes" disabled>
+                        <input type="text" name="7to18" id="menoresPrice" class="cajasRes" disabled>
+                        <input type="text" name="7to18" id="menoresTot" class="cajasRes" disabled></br>
+                        <label class="labelCajas" for="18to65">18 to 65</label>
+                        <input type="text" name="18to65" id="adultoReserva" class="cajasRes" disabled>
+                        <input type="text" name="18to65" id="adultoPrice" class="cajasRes" disabled>
+                        <input type="text" name="18to65" id="adultoTot" class="cajasRes" disabled>
+
+                        </br>
+                        <label class="labelCajas" for="masde65">More than 65</label>
+                        <input type="text" name="more65" id="more65Reserva" class="cajasRes" disabled>
+                        <input type="text" name="more65" id="more65Price" class="cajasRes" disabled>
+                        <input type="text" name="more65" id="more65Tot" class="cajasRes" disabled></br>
+                    <p>
+                        <label class="labelCajas" for="total">Total price</label>
+                        <input type="text" name="totalPrice" id="totalPrice" class="cajaTot" disabled>
+
+                    </p>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/bidaiak_azterk_2.js" type="text/javascript"></script>
+</body>
+
+</html>

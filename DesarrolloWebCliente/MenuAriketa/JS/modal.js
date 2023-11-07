@@ -53,7 +53,8 @@ $(document).ready(function () {
         cargarPlatosEnSeccion(data[2].datos, "PostresPlatos");
     });
 
-    $(document).on("change", ".classCheckbox", function () {
+    $(document).on("change", ".classCheckbox", function (event) {
+        var titulo = event.target.value
         var precioPlato = parseFloat($(this).val());
         var tituloPlato = $(this).data("titulo");
 

@@ -1,6 +1,6 @@
-$('#btnLoadMenu').on('click',()=>{
+$('#btnLoadMenu').on('click', () => {
     window.location.replace("ELEGIR_PRODUCTO.html?view=menu");
 })
-$('#btnLoadPlatos').on('click',()=>{
+$('#btnLoadPlatos').on('click', () => {
     window.location.replace("ELEGIR_PRODUCTO.html?view=platos");
 })

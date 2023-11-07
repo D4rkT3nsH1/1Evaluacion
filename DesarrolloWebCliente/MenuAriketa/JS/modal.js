@@ -3,10 +3,14 @@ $(document).ready(function () {
     var descuento = 1;
     var precioTotal = 0;
 
-    if (window.location === "ELEGIR_PRODUCTO.html?view=platos#") {
-        $('#comboMenus').hide();
-    }
+    var url = window.location.href;
+    var recortado = url.split("/");
 
+    if (recortado[recortado.length - 1] == "ELEGIR_PRODUCTO.html?view=platos" || recortado[recortado.length - 1] == "ELEGIR_PRODUCTO.html?view=platos#") {
+        $('.menuNav').hide();
+    } else {
+        $('.menuNav').show();
+    }
 
     function mostrarPlatosSeleccionados() {
         var listaPlatos = $("#listaPlatosSeleccionados");
@@ -18,17 +22,30 @@ $(document).ready(function () {
         }
     }
 
+    $("#comboMenu").on("change", function () {
+        var comboValue = $(this).val();
+        if (comboValue === "elegir") {
+            $('[data-basico="true"], [data-especial="true"]').show();
+        } else if (comboValue === "basico") {
+            $('[data-basico="true"]').show();
+            $('[data-especial="true"]').hide();
+        } else {
+            $('[data-basico="true"]').hide();
+            $('[data-especial="true"]').show();
+        }
+    })
+
     function actualizarPrecioTotal() {
         precioTotal = 0;
         for (var i = 0; i < platosSeleccionados.length; i++) {
             precioTotal += platosSeleccionados[i].precio;
         }
-        $("#precioTotal").text("Precio Total: " + precioTotal + "€");
+        $("#precioTotal").text("Precio Total: " + precioTotal.toFixed(2) + "€");
     }
 
     function aplicarDescuento() {
         var precioPostDescuento = precioTotal * descuento;
-        $('#precioTotalPostDescuento').text("Precio post descuento " + precioPostDescuento + "€");
+        $('#precioTotalPostDescuento').text("Precio post descuento: " + precioPostDescuento.toFixed(2) + "€");
     }
 
     function cargarPlatosEnSeccion(platos, seccionId) {
@@ -53,8 +70,7 @@ $(document).ready(function () {
         cargarPlatosEnSeccion(data[2].datos, "PostresPlatos");
     });
 
-    $(document).on("change", ".classCheckbox", function (event) {
-        var titulo = event.target.value
+    $(document).on("change", ".classCheckbox", function () {
         var precioPlato = parseFloat($(this).val());
         var tituloPlato = $(this).data("titulo");
 
@@ -76,6 +92,12 @@ $(document).ready(function () {
             return;
         }
         $("#Pedido").fadeIn(400);
+        $("#descuento").hide();
+        $("#btnComprar").prop("disabled", true);
+    });
+
+    $("#elemVolver").click(function () {
+        window.location.href = "index.html"
     });
 
     $("#edad").keyup(function () {
@@ -87,17 +109,21 @@ $(document).ready(function () {
         }
 
         if (edad < 18) {
+            $("#descuento").show();
             $("#descuento").text("Descuento del 10%");
+            $("#descuento").append("<hr>");
             $("#precioTotalPostDescuento").show();
             descuento = 0.9;
             aplicarDescuento();
         } else if (edad > 65) {
+            $("#descuento").show();
             $("#descuento").text("Descuento del 20%");
+            $("#descuento").append("<hr>");
             $("#precioTotalPostDescuento").show();
             descuento = 0.8;
             aplicarDescuento();
         } else {
-            $("#descuento").text("");
+            $("#descuento").hide();
             $("#precioTotalPostDescuento").hide();
             descuento = 1;
             aplicarDescuento();
@@ -112,6 +138,8 @@ $(document).ready(function () {
         } else {
             $("#btnComprar").prop("disabled", false);
         }
+
+        $("#btnComprar").prop("disabled", false);
     });
 
     $("#btnComprar").click(function () {

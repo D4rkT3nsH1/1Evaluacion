@@ -151,11 +151,21 @@ section {
         grid-row: span 1;
     }
 
+    footer nav {
+        display: flex;
+        flex-direction: column;
+    }
+
     @media (max-width: 550px) {
         .container {
             display: flex;
             flex-direction: column;
             width: 80%;
+        }
+
+        footer div {
+            display: flex;
+            flex-direction: column;
         }
     }
 

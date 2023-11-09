@@ -1,0 +1,194 @@
+html {
+    width: auto;
+    height: auto;
+}
+
+body,
+header {
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-style: italic;
+    position: sticky;
+    top: 0;
+}
+
+#goikoa {
+    display: flex;
+    margin-right: 5%;
+    justify-content: flex-end;
+}
+
+#goikoa a {
+    padding: 15px;
+    padding-bottom: 35px;
+    border-right: 3px solid white;
+}
+
+#behekoa {
+    display: flex;
+}
+
+#behekoa a {
+    padding: 10px;
+    background-color: #666666;
+    border-right: 3px solid #999999;
+}
+
+#behekoa a:hover {
+    background-color: #cccccc;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#logo {
+    height: 80px;
+    width: 90px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 250px);
+    grid-gap: 20px;
+    width: 80%;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+}
+
+.tarjeta p {
+    background-color: grey;
+    font-weight: bold;
+    margin-top: -18px;
+    margin-bottom: 0px;
+}
+
+#img1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+#img2 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img10 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+#img9 {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+
+    header {
+        display: block;
+        position: sticky;
+        top: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 10px;
+        width: 80%;
+    }
+
+    #navLinks {
+        display: none;
+    }
+
+    #img1,
+    #img2,
+    #img3,
+    #img4,
+    #img5,
+    #img6,
+    #img7,
+    #img8,
+    #img9,
+    #img10 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    @media (max-width: 550px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+    }
+
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+footer p {
+    color: white;
+}
+
+footer h3 {
+    background-color: #000CA7;
+    text-align: center;
+}
+
+footer h3:hover {
+    background-color: #99ccff;
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer nav a {
+    color: #99ccff;
+}

@@ -1,0 +1,155 @@
+NOTA: /* SIEMPRE USAR CLASES PARA MODELOS / CONTROLADORES */
+
+Conectarse a una bdd {
+
+    private $mysqli; //Es importante declarar esto para que funcione bien y no te de error
+
+    // Konektatzeko funtzioa / Función para realizar la conexión.
+    public function konektatu()
+    {
+        try {
+
+            $this->mysqli = new mysqli('localhost', 'root', '', 'nombre_bdd');
+            if ($this->mysqli->connect_errno) {
+                throw new Exception('Konektatzean Akatsa:/ Error en conexión: ' . $this->mysqli->connect_error);
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+}
+---------------------------------------------
+Comprobar login de usuario {
+    
+    public function erabiltzaileaEgiaztatu ($username, $pass) {
+        $sql = "SELECT izena FROM erabiltzaileak WHERE erabiltzaile_izena = '$username' and pasahitza = '$pass'";
+
+        $this->mysqli->query($sql);
+        if ($this->mysqli->affected_rows != 0) {
+                return true;
+            } 
+        else {
+            return false;
+        }
+    }
+}
+---------------------------------------------
+Recorrer array asociativo {
+
+    //Ejemplo array asociativo
+
+    $persona = array(
+        "nombre" => "Juan",
+        "edad" => 25,
+        "ciudad" => "Ejemploville"
+    );
+
+    //Recorremos el array con foreach
+
+    foreach ($persona as $clave => $valor) {
+        // ($clave en este caso seria en la primera vuelta "nombre". En la segunda "edad" y asi sucesivamente)
+        // ($valor en la primera vuelta seria "Juan", en la segunda "25" ...)
+        
+        echo $clave . ": " . $valor;
+    }
+
+    //Podemos comprobar si hay algo en el array con (in_array()) {
+        // Valor que queremos comprobar
+        $valorBuscado = "Juan";
+
+        // Comprobar si el valor existe en el array
+        if (in_array($valorBuscado, $persona)) {
+            echo "El valor '$valorBuscado' existe en el array.";
+        } else {
+            echo "El valor '$valorBuscado' no existe en el array.";
+        }
+    }
+  
+}
+---------------------------------------------
+Coger datos de un form {
+    
+    //Tenemos que declarar el metodo y el action que va a tener {
+        <form method="POST" action="controlador.php">
+            //Contenido form
+        </form>
+        -> cuando hagamos un submit la informacion se podra coger desde el php que hemos puesto en el action
+
+        codigo php {
+            $nombreVariable = $_POST['nombreInputForm'];
+
+            var_dump($nombreVariable);//Enseñar valores de la variable que quieras
+        }
+    }
+}
+---------------------------------------------
+Que es $_SESSION {
+
+    $_SESSION es una variable global de php (Es como un array asociativo) {
+        //Podemos poner lo que queramos, por ejemplo:
+
+        //Si hemos validado un usuario y queremos guardarlo por que lo vamos a usar varias veces:
+
+        $_SESSION['nombreUsuario'] = $_POST['nombreEtiquetaHTML'];
+
+        TENER EN CUENTA QUE PARA INICIAR EL $_SESSION[] TENEMOS QUE PONER AL INICIO DE LOS FICHEROS ESTA FUNCION {
+            session_start();
+        }
+        PARA ACABAR CON LAS $_SESSION {
+            session_abort();
+        }
+    }
+}
+---------------------------------------------
+Explode {
+
+    //Explode es una funcion de php que pasa un String a un array. Por ejemplo {
+        $string = "Kaiet, Aitor, Aimar, Egoitz";
+
+        $arrayString = explode(",", $string);
+
+        //Para el explode lo que hacemos es coger un parametro de el string por el que se van a separar los elementos que vamos a tener como valores en el array.
+
+        resultado {
+            $arrayString[0] = "Kaiet";
+            $arrayString[1] = "Aitor";
+            $arrayString[2] = "Aimar";
+            $arrayString[3] = "Egoitz";
+        }
+    }
+}
+---------------------------------------------
+Implode {
+    //Implode es justo lo contrario, hace que un array pase a ser un String {
+
+        //Array:
+        $frutas = array('manzana', 'plátano', 'uva');
+
+        //Usamos el implode para usar la "," como delimitador{
+            $cadena = implode(', ', $frutas);
+        }
+
+        //Imprimimos resultado {
+            echo $cadena;
+            //Resultado = ($cadena = "manzana, platano, uva") 
+        }
+    }
+}
+---------------------------------------------
+Comprobar los checkboxes seleccionados en un form {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obtener las frutas seleccionadas
+        if (isset($_POST['frutas']) && is_array($_POST['frutas'])) {
+            $frutasSeleccionadas = $_POST['frutas'];
+        
+            // Hacer algo con las frutas seleccionadas
+            foreach ($frutasSeleccionadas as $fruta) {
+                echo "Fruta seleccionada:". $fruta."<br>";
+            }
+        } else {
+            echo "No se seleccionaron frutas.";
+        }
+    }   
+}

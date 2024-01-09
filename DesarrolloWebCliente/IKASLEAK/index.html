@@ -6,9 +6,6 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link href="css/index.css" rel="stylesheet" type="text/css" />
-    <script src="js/angular.min.js" type="text/javascript"></script>
-    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
     <title>AZTERKETA</title>
 </head>
 
@@ -17,45 +14,58 @@
     <div id="pagInicial">
         <header>
             <h1>IDENTIFICA LOS ANIMALES</h1>
-            <div id="barraImagenes"> </div>
+            <div id="barraImagenes">
+                <div ng-repeat="animal in animals"> <img ng-src="{{ animal.imgAnimal }}"></div>
+            </div>
             <hr>
             <div id="barraCirculos"> </div>
-            <button class="tipoSelect" id="verResultados"><a href="#test">VER RESULTADOS</a></button>
-            <button class="tipoSelect" id="verElegirNivel"><a href="#test">REALIZAR TEST</a></button>
+            <button class="tipoSelect" id="verResultados" ng-click="checkResults()">VER
+                    RESULTADOS</button>
+            <button class="tipoSelect" id="verElegirNivel" ng-click="start()">REALIZAR TEST</button>
             <hr>
         </header>
 
+        <div id="zonaresultados">
+            <table>
+                <tr ng-repeat="(key, value) in results">
+                    <td class="ver">{{ key }}</td>
+                    <td class="ver" ng-style="{'color': (value === 'Correcto') ? 'green' : 'red'}">{{ value }}</td>
+                </tr>
+            </table>
+
+            <button class="tipoSelect" ng-click="resetGame()">REINICIAR JUEGO</button>
+        </div>
+
         <div id="zonatest">
             <div id="niveles">
-                <button class="tipoSelect" ng-click="startGame('facil')">PRINCIPIANTE</button>
+                <button class="tipoSelect" ng-click="startGame('facil')">NIVEL FÁCIL</button>
                 <button class="tipoSelect" ng-click="startGame('medio')">NIVEL MEDIO</button>
                 <button class="tipoSelect" ng-click="startGame('dificil')">NIVEL AVANZADO</button>
             </div>
             <div id="content">
-                <div ng-repeat="animal in animals" ng-show="gameStarted">
-                    <img ng-src="{{ animal.imgAnimal }}" alt="Animal Image">
-                    <div>
-                        <button class="tipoSelect" ng-click="checkAnswer(animal.R1, animal.correcto)">{{ animal.R1
-                            }}</button>
-                        <button class="tipoSelect" ng-click="checkAnswer(animal.R2, animal.correcto)">{{ animal.R2
-                            }}</button>
-                        <button class="tipoSelect" ng-click="checkAnswer(animal.R3, animal.correcto)">{{ animal.R3
-                            }}</button>
+                <div ng-repeat="animal in filteredAnimals" ng-show="gameStarted">
+                    <div id="juegoAnimale">
+                        <img ng-src="{{ animal.imgAnimal }}">
+                        <div id="juegoAnimaleButtons">
+                            <button class="tipoSelect"
+                                ng-click="checkAnswer($event, animal.id, animal.R1, animal.correcto)">{{ animal.R1
+                                }}</button>
+                            <button class="tipoSelect"
+                                ng-click="checkAnswer($event, animal.id, animal.R2, animal.correcto)">{{ animal.R2
+                                }}</button>
+                            <button class="tipoSelect"
+                                ng-click="checkAnswer($event, animal.id, animal.R3, animal.correcto)">{{ animal.R3
+                                }}</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="zonaresultados">
-            <button class="tipoSelect" ng-click="loadResults()">CARGAR RESULTADOS</button>
-            <table>
-                <tr id="listaAnimales">
-                    <td class="ver" ng-repeat="result in results">{{ result }}</td>
-                </tr>
-            </table>
-        </div>
     </div>
-
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
 </body>
 
 </html>

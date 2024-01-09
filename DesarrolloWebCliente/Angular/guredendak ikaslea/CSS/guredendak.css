@@ -1,0 +1,365 @@
+/*ESTILOS ENCABEZADO AMBAS PAGINAS*/
+header {
+    background-color: black;
+    color: white;
+}
+
+ul {
+    background: #FF8800;
+    text-align: center;
+    padding: 3px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+ul li {
+    color: black;
+    background: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+ul li span {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+/*FIN ESTILOS ENCABEZADO  */
+
+
+/*ESTILOS ZONA CARDS*/
+#zonaConsulta img.txiki {
+    width: 20px;
+    height: 20px;
+}
+
+#zonaConsulta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+#zonaConsulta .card {
+    border: 1px solid silver;
+    margin: 15px;
+    background-color: #ffecd6;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 250px;
+}
+
+#zonaConsulta .card img.Cprod {
+    /*    width: 100%;*/
+    height: 150px;
+    width: 250px;
+}
+
+#zonaConsulta .card img.txiki {
+    width: 25%;
+
+}
+
+#zonaConsulta .card span {
+    font-size: 18px
+}
+
+#zonaConsulta .card button {
+    font-weight: bolder;
+    background: #FF8800;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/**********ESTILO  INSERTAR************/
+
+* {
+    box-sizing: border-box;
+}
+
+#zonaInsertar .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px solid #c1c1c1;
+}
+
+#zonaInsertar h3 {
+    margin: 0;
+}
+
+#zonaInsertar input:focus {
+    outline: 3px solid gold;
+}
+
+#zonaInsertar input,
+#zonaInsertar button {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+#zonaInsertar .wrapper>* {
+    padding: 1em;
+}
+
+#zonaInsertar form label {
+    display: block;
+}
+
+#zonaInsertar form p {
+    margin: 0;
+}
+
+#zonaInsertar div button,
+input {
+    padding: 1em;
+}
+
+#zonaInsertar div button {
+    background: lightgrey;
+    width: 100%;
+    border: 0;
+}
+
+#zonaInsertar div button.mitad {
+    width: 50%;
+}
+
+#zonaInsertar div button:hover,
+button:focus {
+    background: gold;
+    outline: 0;
+}
+
+#zonaInsertar form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 20px;
+}
+
+#zonaInsertar form p {
+    grid-column: 1 / 2;
+}
+
+#zonaInsertar .input-file-wrapper {
+    grid-column: 2 / 3;
+    grid-row: 1 /5;
+}
+
+
+/************************************/
+#pagIndex section .card button {
+    width: 50%;
+    align-self: center;
+}
+
+/* ESTILO PAGINA ELEGIR_PRODUCTO************/
+#elegirProd section .card {
+    display: none;
+}
+
+/*  codigo de carro compra*/
+#zonaCarro {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    border: #333333 3px solid;
+    background-color: #FAFAFA;
+    color: #000000;
+    padding: 20px;
+}
+
+#zonaCarro {
+    width: 50%;
+    background-color: #c1c1c1;
+}
+
+
+/*codigo del modal  nuevo insertar prodducto*/
+.overlay,
+#light {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1001;
+    opacity: .75;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+    overflow-y: hidden;
+}
+
+.modal {
+    /*ultimo cambio*********************************************/
+    box-sizing: border-box;
+    position: fixed;
+    top: 15%;
+    left: 12%;
+    width: 70%;
+    /*     //height: 70%;**********************************************/
+    padding: 16px;
+    background: #fff;
+    color: #333;
+    z-index: 1002;
+    display: flex;
+    flex-direction: row;
+    /*    overflow: auto;*********************************************/
+}
+
+.modal .modalElem {
+    width: 50%;
+}
+
+.modal .modalElem li span {
+    width: 200px;
+    display: inline-flex;
+
+}
+
+.modal #formPedido input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#btnAceptarComprar {
+    display: none;
+}
+
+/*poner color gris claro al placeholder del input del menu*/
+::-webkit-input-placeholder {
+    color: #adadad;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #adadad;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #adadad;
+}
+
+:-ms-input-placeholder {
+    color: #adadad;
+}
+
+/************MEDIA QUERY*******************************************/
+
+@media (max-width: 716px) {
+    #light {
+        flex-direction: column;
+    }
+
+    .modal {
+        position: absolute;
+    }
+
+    .modal .modalElem {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    #pagIndex section,
+    #elegirProd section {
+        flex-wrap: wrap;
+    }
+
+    #pagIndex header div:nth-child(2) img {
+        display: none;
+    }
+
+    #pagIndex header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pagIndex header nav a {
+        width: 50%;
+        margin: 5px;
+    }
+
+    #elegirProd section .card {
+        width: 90%;
+    }
+
+    #elegirProd nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #elegirProd nav a {
+        margin-top: 5px;
+    }
+
+    #elegirProd nav select {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+}
+
+@media (min-width:451px) and (max-width: 675px) {
+    #elegirProd section {
+        flex-wrap: wrap;
+    }
+
+    #elegirProd section .card {
+        width: 40%;
+    }
+
+    #elegirProd nav select {
+        padding-top: 3px;
+        padding-bottom: 2px;
+    }
+}
+
+@media (min-width:451px) and (max-width: 775px) {
+    #pagIndex section {
+        flex-wrap: wrap;
+    }
+
+    #pagIndex section .card {
+        width: 40%;
+    }
+
+    #pagIndex nav select {
+        padding-top: 3px;
+        padding-bottom: 2px;
+    }
+}
+
+.oculto {
+    display: none;
+}

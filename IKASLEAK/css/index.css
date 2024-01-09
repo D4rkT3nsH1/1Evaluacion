@@ -1,0 +1,142 @@
+header{
+    text-align: center;
+}
+#barraImagenes{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between; 
+    flex-wrap:no-wrap;
+
+}
+#barraImagenes img{
+    max-width:100px;
+    max-height:100px;
+
+}
+#barraCirculos{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content:center; 
+}
+#barraCirculos div{
+    font-size: xx-large;
+    border:2px solid black; 
+    border-radius: 100%;
+    background-color:  aliceblue;
+    padding:4px;
+    width: 40px;
+    height: 40px;
+    margin:4px;
+}
+
+
+#niveles{padding:20px;width:70%;margin:auto;}
+#niveles button{padding:8px}
+
+@media only screen and (max-width: 1000px)  {
+
+    #barraImagenes{display:grid;
+                   grid-template-columns:repeat(5,1fr );
+                   grid-template-rows: 200px,200px;
+                   grid-gap:5px;   }
+    #barraImagenes img{     
+        height: 200px;  
+    }
+
+}
+@media only screen and (max-width: 520px)  {
+    #barraImagenes{display:none;} 
+    #barraCirculos div{font-size: x-large;
+                       border:2px solid black; 
+                       border-radius: 100%;
+                       background-color:  aliceblue;
+                       padding:4px;
+                       width: 30px;
+                       height: 30px;
+                       margin:2px;}
+    #niveles button{display:flex;
+                    flex-direction: column;
+                    width:100%;
+                    padding:7px;
+                    margin:5px;
+    }
+    #niveles button a {
+
+    }
+
+}
+a{   text-decoration: none;
+     text-align: center;
+}
+.zonaCentro{text-align:center;margin-bottom: 90px;}
+.zonaCentro img{width: 60%; height:50%; }
+#content{  font-size: x-large;}
+#content img{width:40%; height: 40%;}
+.numeracion{text-align: left;
+            width: 60%;
+            margin: auto;
+}
+ul{list-style: none;
+   width: 60%;
+   margin:auto;
+   padding-bottom: 10px;
+}
+li{ border: 1px solid gray;
+    padding:8px;
+    width:80%;
+    margin-top:20px;
+    min-width: 175px;
+
+    background-color: #e9f4f1;  }
+
+
+#pagInicial{
+    background-image: url("/img/varios2.jpg");
+    background-size:cover ;
+    background-repeat:no-repeat ;
+    text-align: center;
+}
+#pageInicio{
+    background-color:white;
+    text-align: center;
+    margin-top:60%; 
+    /* border-radius: 50%; */
+    padding:20px;
+}
+#pageInicio img{
+    width:30%;
+    height:0%;
+}
+
+
+#idfooterpadtest a button{
+    font-size: 24px!important;
+    border:3px solid green ;
+    background-color:rgb(185, 235, 110);
+}
+.error{
+    border:3px solid red!important ;
+    background-color:rosybrown!important;   
+}  
+.acierto{  
+    border:3px solid green!important ;
+    background-color:rgb(185, 235, 110)!important;
+} 
+.seleccionado{
+    border:3px solid green!important ;
+}
+#zonaresultados{display:none;}  
+#zonatest{display:none;}
+table{
+    border: chocolate;
+    border-style: solid;
+    text-align: center;
+    margin:auto;
+    width:50%;
+
+} 
+ table td img{
+ width:20%;
+    height:20%;
+ }

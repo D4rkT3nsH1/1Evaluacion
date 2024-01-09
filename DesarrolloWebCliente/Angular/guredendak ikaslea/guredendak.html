@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de Angular</title>
+
+    <script src="lib/angular.min.js" type="text/javascript"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>  -->
+    <script src="JS/guredendak.js" type="text/javascript"></script>
+    <link href="CSS/guredendak.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <h1><img src="IMG/guredendak.jpg" alt="" /> CHOCOLATES ARTESANOS </h1>
+
+        <ul id="menu">
+            <li id="uno">VER PRODUCTOS</li>
+            <li id="dos">INSERTAR NUEVO PRODUCTO</li>
+            <li id="tres">BUSCAR</li>
+            <li id="cuatro">VER CARRO </li>
+        </ul>
+
+    </header>
+
+    <div id="zonaConsulta">
+        <div class="card tablaProductos">
+            <p>tipo producto</p>
+            <p><img width="125px" height="75px" class="Cprod"> </p>
+            <p>nombre producto</p>
+            <p>PRECIO: <span>precio producto €</span></p>
+            <p>Disponibles:&nbsp; XX &nbsp;unidades</p>
+            <button>Add to Cart</button>
+            <p> <img src="IMG/images.jpg" class="txiki" style="cursor: pointer;" />
+                <img src="IMG/modif.png" class="txiki" style="cursor: pointer;" />
+            </p>
+        </div>
+    </div>
+
+    <div id="zonaCarro">
+        <table class="tablaProductos">
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Cuantos compra</th>
+                <th>Total a Pagar</th>
+            </tr>
+        </table>
+        <br>
+        <button> Realizar compra </button>
+        <button> Cancelar compra </button>
+        <button> Vaciar carro </button>
+    </div>
+    <div id="zonaInsertar">
+        <div class="wrapper">
+            <h3>titulo de insertar mosificar</h3>
+            <form action="">
+                <p>
+                    <label for="nombre">Nombre Producto</label>
+                    <input type="text">
+                </p>
+                <p>
+                    <label for="tipo">Tipo</label>
+                    <input type="text">
+
+                </p>
+                <p>
+                    <label for="nombre">Precio</label>
+                    <input type="text">
+                </p>
+                <p>
+                    <label for="nombre">Cantidad</label>
+                    <input type="text">
+                </p>
+                <p class="mitad"> <button>GUARDAR</button></p>
+                <p class="mitad"> <button>GUARDAR MODIFICAR</button></p>
+                <p> <button>CANCELAR</button></p>
+                <p class="input-file-wrapper">
+                    <img src="" id="idNuevaFoto">
+                    <label for="upload">Subir foto</label><br>
+
+                    <br <button id="iduploadImage">Upload</button>
+                    <br><br>
+
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

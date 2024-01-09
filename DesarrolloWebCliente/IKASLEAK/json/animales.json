@@ -1,0 +1,92 @@
+[
+    {
+        "id": "0",
+        "tipo": "0",
+        "imgAnimal": "img/imagen1.jpg",
+        "R1": "PANGOLIN",
+        "R2": "ARMADILLO",
+        "R3": "OSO HORMIGUERO",
+        "correcto": "0"
+    },
+    {
+        "id": "1",
+        "tipo": "0",
+        "imgAnimal": "img/imagen2.jpg",
+        "R1": "TARSERO DE FILIPINAS",
+        "R2": "LEMMING",
+        "R3": "LEMUR",
+        "correcto": "0"
+    },
+    {
+        "id": "2",
+        "tipo": "0",
+        "imgAnimal": "img/imagen3.jpg",
+        "R1": "LICAON",
+        "R2": "DINGO",
+        "R3": "COYOTE",
+        "correcto": "1"
+    },
+    {
+        "id": "3",
+        "tipo": "2",
+        "imgAnimal": "img/imagen4.jpg",
+        "R1": "PATO NEOZELANDES",
+        "R2": "ORNITORRINCO",
+        "R3": "GAGALO",
+        "correcto": "1"
+    },
+    {
+        "id": "4",
+        "tipo": "0",
+        "imgAnimal": "img/imagen5.jpg",
+        "R1": "OCELOTE",
+        "R2": "GATO MONTES",
+        "R3": "SERVAL",
+        "correcto": "2"
+    },
+    {
+        "id": "5",
+        "tipo": "2",
+        "imgAnimal": "img/imagen6.jpg",
+        "R1": "CIERVO RATON",
+        "R2": "ANTILOPE PIGMEO",
+        "R3": "DICDIC",
+        "correcto": "0"
+    },
+    {
+        "id": "6",
+        "tipo": "1",
+        "imgAnimal": "img/imagen7.jpg",
+        "R1": "LAGARTO SPIDERMAN",
+        "R2": "IGUANA BICOLOR",
+        "R3": "DRAGON DE COMODO",
+        "correcto": "0"
+    },
+    {
+        "id": "7",
+        "tipo": "1",
+        "imgAnimal": "img/imagen8.jpg",
+        "R1": "LICAON",
+        "R2": "HIENA",
+        "R3": "OTOCION O ZORRO OREJUDO",
+        "correcto": "0"
+    },
+    {
+        "id": "8",
+        "tipo": "1",
+        "imgAnimal": "img/imagen9.jpg",
+        "R1": "JIRAFA RALLADA",
+        "R2": "CIERVO CEBRA",
+        "R3": "OKAPI",
+        "correcto": "2"
+    },
+    {
+        "id": "9",
+        "tipo": "0",
+        "imgAnimal": "img/imagen10.jpg",
+        "R1": "WOMBAT",
+        "R2": "HAMSTER TODOTERRENO AUSTRALIANO",
+        "R3": "CHINCHILLA",
+        "correcto": "0"
+    }
+]
